@@ -101,7 +101,43 @@ button, input, select { font: inherit; color: inherit; }
   letter-spacing: 0.18em;
 }
 h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.03em; }
-.hero h1 { margin: 0; font-size: clamp(40px, 4.6vw, 64px); line-height: 1.22; }
+.hero h1, .hero-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-size: clamp(40px, 4.6vw, 64px);
+  line-height: 1.22;
+}
+.seo-lead { padding: 34px 0 8px; background: #fffdf9; }
+.seo-lead h1 { margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.25; }
+.seo-lead p { margin: 14px 0 0; max-width: 720px; font-size: 18px; line-height: 1.75; }
+.blog { background: #fffdf9; }
+.blog-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 36px 34px 28px;
+  box-shadow: var(--shadow);
+}
+.blog-card h2 { margin: 0 0 18px; font-size: clamp(28px, 3vw, 40px); line-height: 1.35; }
+.blog-card p { margin: 0 0 16px; font-size: 17px; line-height: 1.9; }
+.blog-card h3 { margin: 26px 0 12px; font-size: 26px; }
+.faq p { margin: 0 0 18px; }
+.faq strong { display: block; margin-bottom: 4px; }
+.blog-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
+.blog-photos img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 18px; }
+.blog-photos figcaption { margin-top: 6px; color: var(--muted); font-size: 13px; text-align: center; }
+.place-links, .keyword-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.place-links a, .keyword-links a {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-weight: 750;
+  word-break: keep-all;
+}
+.keyword-links a { border-radius: 16px; }
 .lede { margin: 18px 0 0; max-width: 460px; color: var(--muted); font-size: 17px; }
 .hero-actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
 .btn {
@@ -726,7 +762,8 @@ footer {
   .rehome-step:nth-child(even) .rehome-photo { order: 0; }
   .rehome-copy { padding: 22px; }
   .rehome-quote { min-height: 320px; padding: 52px 22px; border-radius: 24px; }
-  .grid, .area-grid { grid-template-columns: 1fr 1fr; }
+  .grid, .area-grid, .blog-photos { grid-template-columns: 1fr 1fr; }
+  .blog-card { padding: 22px 18px; }
   .hero-photos a:first-child { min-height: 280px; }
   .hero-photos .hero-meta { left: 8px; right: 8px; bottom: 8px; gap: 4px; }
   .hero-photos .hero-name,

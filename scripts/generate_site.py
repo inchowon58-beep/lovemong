@@ -143,15 +143,37 @@ def normalize(pet: dict, blurbs: dict[str, str]) -> dict:
     }
 
 
-def head(title: str, depth: str, description: str, canonical: str = "") -> str:
+def head(
+    title: str,
+    depth: str,
+    description: str,
+    canonical: str = "",
+    image: str = "",
+    json_ld: str = "",
+) -> str:
     canon = f'\n  <link rel="canonical" href="{esc(canonical)}">' if canonical else ""
+    social = ""
+    if image:
+        social = f"""
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="러브몽 보호소">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="{esc(title)}">
+  <meta property="og:description" content="{esc(description)}">
+  <meta property="og:url" content="{esc(canonical)}">
+  <meta property="og:image" content="{esc(image)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{esc(title)}">
+  <meta name="twitter:description" content="{esc(description)}">
+  <meta name="twitter:image" content="{esc(image)}">"""
+    linked = f'\n  <script type="application/ld+json">{json_ld}</script>' if json_ld else ""
     return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{esc(title)}</title>
-  <meta name="description" content="{esc(description)}">{canon}
+  <meta name="description" content="{esc(description)}">{canon}{social}{linked}
   <link rel="icon" href="{depth}assets/favicon.png" type="image/png" sizes="64x64">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&amp;display=swap">
@@ -455,7 +477,7 @@ def write(path: pathlib.Path, content: str) -> None:
     path.write_text(content, encoding="utf-8")
 
 
-def rehome_section() -> str:
+def rehome_section(depth: str = "") -> str:
     if not REHOME_PATH.exists():
         return ""
     data = json.loads(REHOME_PATH.read_text(encoding="utf-8"))
@@ -469,7 +491,7 @@ def rehome_section() -> str:
         for ext in (".jpg", ".jpeg", ".png", ".webp"):
             candidate = REHOME_IMAGE_DIR / f"{stem}{ext}"
             if stem and candidate.exists():
-                image = f"assets/rehome/{stem}{ext}"
+                image = f"{depth}assets/rehome/{stem}{ext}"
                 break
         photo = f'<img src="{esc(image)}" alt="">' if image else ""
         reason_cards.append(
@@ -492,7 +514,7 @@ def rehome_section() -> str:
         for ext in (".jpg", ".jpeg", ".png", ".webp"):
             candidate = REHOME_IMAGE_DIR / f"{stem}{ext}"
             if candidate.exists():
-                image = f"assets/rehome/{stem}{ext}"
+                image = f"{depth}assets/rehome/{stem}{ext}"
                 break
         img = f'<img src="{esc(image)}" alt="{esc(step.get("title") or "")}">' if image else ""
         steps.append(
@@ -645,97 +667,30 @@ def contact_section() -> str:
 """
 
 
-def area_index_section(depth: str) -> str:
-    links = "".join(
-        f'<a href="{depth}area/{slug}/">{esc(name)} 강아지 파양 보호소</a>'
-        for name, slug, _note in AREAS
-    )
+def place_directory_section(depth: str) -> str:
+    from seo_places import PLACES
+
+    links = "".join(f'<a href="{depth}k/{esc(name)}/">{esc(name)}</a>' for name in PLACES)
     return f"""<section class="section" id="areas">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <h2>지역별 강아지 파양 보호소</h2>
-        <p>입소 상담은 전국 어디서든 전화로 받습니다. 사는 곳을 누르면 그 지역 안내를 볼 수 있어요.</p>
+        <h2>지역별 안내</h2>
+        <p>사는 곳을 누르면 강아지파양, 보호소, 입양 안내로 이어집니다. 상담은 전국 전화로 받습니다.</p>
       </div>
     </div>
-    <div class="area-grid">{links}</div>
+    <div class="place-links">{links}</div>
   </div>
 </section>
 """
 
 
-def area_article(name: str, slug: str, note: str, depth: str) -> str:
-    others = "".join(
-        f'<a href="{depth}area/{other_slug}/">{esc(other_name)} 강아지 파양 보호소</a>'
-        for other_name, other_slug, _other_note in AREAS
-        if other_slug != slug
-    )
-    return f"""<section class="section seo-article">
-  <div class="wrap seo-copy">
-    <p class="eyebrow">강아지 파양</p>
-    <h2>{esc(name)} 강아지 파양 보호소</h2>
-    <p>{esc(name)} 강아지 파양 보호소 상담은 러브몽 보호소가 전화로 받습니다. 임신과 출산, 알레르기, 이사와 유학, 군 복무, 나이 드신 보호자처럼 더 키우기 어려운 사정을 먼저 듣습니다. {esc(note)}</p>
-    <h3>{esc(name)} 강아지 파양, 상담에서 듣는 것</h3>
-    <p>전화는 {PHONE} 입니다. 아이의 나이, {esc(name)}의 어느 쪽인지, 아픈 곳과 지금 상황을 듣고 입소가 가능한지 안내합니다. 자리가 없으면 바로 받기 어렵습니다. 상담은 입소를 약속하는 절차가 아닙니다.</p>
-    <p>입소가 되면 건강과 크기에 맞춰 보호하고, 사진과 영상을 남긴 뒤 입양 공고로 새 가족을 찾습니다. 가족을 기다리는 아이는 <a href="{depth}pets/index.html">입양하기</a>에서 볼 수 있고, 입양 전화는 {ADOPT_PHONE} 입니다. 파양 절차는 <a href="{depth}index.html#rehome">강아지 파양 입소</a>에 적어 두었습니다.</p>
-    <h3>다른 지역 강아지 파양 보호소</h3>
-    <div class="area-grid">{others}</div>
-  </div>
-</section>
-"""
-
-
-def build_areas(pets: list[dict]) -> None:
-    hero = pets[:3]
-    for name, slug, note in AREAS:
-        depth = "../../"
-        hero_html = ""
-        for pet in hero:
-            photo = f"{depth}{pet['photos'][0]}" if pet["photos"] else ""
-            social = engagement(pet["id"], pet_comment_lines(pet), pet["name"])
-            hero_html += (
-                f'<a href="{depth}pets/{esc(pet["id"])}/index.html">'
-                f'<img src="{esc(photo)}" alt="{esc(pet["name"])}">'
-                f'<div class="hero-meta">'
-                f'<span class="hero-name">{esc(pet["name"])}</span>'
-                f'<div class="hero-react">{react_row(social)}</div>'
-                f'</div></a>'
-            )
-        page = head(
-            f"{name} 강아지 파양 보호소 — 러브몽 보호소",
-            depth,
-            f"{name} 강아지 파양 보호소 상담은 {PHONE} 입니다. 러브몽 보호소가 입소 가능 여부와 이후 입양을 전화로 안내합니다.",
-            f"{SITE_ORIGIN}/area/{slug}/",
-        )
-        page += nav(depth, "")
-        page += f"""<main>
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <p class="eyebrow">LOVE MONG SHELTER</p>
-        <h1>오늘도,<br>한 아이를<br>기다립니다.</h1>
-        <p class="lede">품종, 나이, 성격과 사진을 보고, 마음에 드는 아이를 가족으로 맞이해 주세요. 전화로 이야기 나눈 뒤 보호소에서 직접 만나봅니다.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="{depth}pets/index.html">입양 아이들 보기</a>
-          <a class="btn btn-ghost" href="tel:{TEL}">전화 상담</a>
-        </div>
-      </div>
-      <div class="hero-photos">{hero_html}</div>
-    </div>
-  </section>
-  {area_article(name, slug, note, depth)}
-  {contact_section()}
-</main>
-"""
-        page += footer(depth)
-        write(SITE / "area" / slug / "index.html", page)
-
-
-def write_sitemap(pets: list[dict], stories: list[dict]) -> None:
-    urls = [f"{SITE_ORIGIN}/", f"{SITE_ORIGIN}/pets/"]
-    urls.extend(f"{SITE_ORIGIN}/area/{slug}/" for _name, slug, _note in AREAS)
+def write_sitemap(pets: list[dict], stories: list[dict], extras: list[str] | None = None) -> None:
+    urls = [f"{SITE_ORIGIN}/", f"{SITE_ORIGIN}/pets/", f"{SITE_ORIGIN}/k/"]
+    urls.extend(extras or [])
     urls.extend(f"{SITE_ORIGIN}/stories/{story['id']}/" for story in stories)
     urls.extend(f"{SITE_ORIGIN}/pets/{pet['id']}/" for pet in pets)
+    urls = list(dict.fromkeys(urls))
     body = "".join(f"  <url><loc>{esc(url)}</loc></url>\n" for url in urls)
     write(SITE / "sitemap.xml", f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -748,45 +703,41 @@ Sitemap: {SITE_ORIGIN}/sitemap.xml
 """)
 
 
-def build_home(pets: list[dict], stories: list[dict]) -> None:
+def front_body(pets: list[dict], stories: list[dict], depth: str, headline_tag: str) -> str:
     hero = pets[:3]
     featured = pets[:6]
     hero_html = ""
     for pet in hero:
-        photo = f"{esc(pet['photos'][0])}" if pet["photos"] else ""
+        photo = f"{depth}{esc(pet['photos'][0])}" if pet["photos"] else ""
         social = engagement(pet["id"], pet_comment_lines(pet), pet["name"])
         hero_html += (
-            f'<a href="pets/{esc(pet["id"])}/index.html">'
+            f'<a href="{depth}pets/{esc(pet["id"])}/index.html">'
             f'<img src="{photo}" alt="{esc(pet["name"])}">'
             f'<div class="hero-meta">'
             f'<span class="hero-name">{esc(pet["name"])}</span>'
             f'<div class="hero-react">{react_row(social)}</div>'
             f'</div></a>'
         )
-    cards = "\n".join(card(pet, "") for pet in featured)
-    page = head(
-        "러브몽 보호소",
-        "",
-        "러브몽 보호소에서 가족을 기다리는 아이들의 입양과, 전국 강아지 파양 입소 상담을 안내합니다.",
-        f"{SITE_ORIGIN}/",
-    )
-    page += nav("", "home")
-    page += f"""<main>
-  <section class="hero">
+    cards = "\n".join(card(pet, depth) for pet in featured)
+    if headline_tag == "h1":
+        headline = "<h1>오늘도,<br>한 아이를<br>기다립니다.</h1>"
+    else:
+        headline = '<p class="hero-title">오늘도,<br>한 아이를<br>기다립니다.</p>'
+    return f"""<section class="hero">
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">LOVE MONG SHELTER</p>
-        <h1>오늘도,<br>한 아이를<br>기다립니다.</h1>
+        {headline}
         <p class="lede">품종, 나이, 성격과 사진을 보고, 마음에 드는 아이를 가족으로 맞이해 주세요. 전화로 이야기 나눈 뒤 보호소에서 직접 만나봅니다.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="pets/index.html">입양 아이들 보기</a>
+          <a class="btn btn-primary" href="{depth}pets/index.html">입양 아이들 보기</a>
           <a class="btn btn-ghost" href="tel:{TEL}">전화 상담</a>
         </div>
       </div>
       <div class="hero-photos">{hero_html}</div>
     </div>
   </section>
-  {rehome_section()}
+  {rehome_section(depth)}
   <section class="section" id="waiting">
     <div class="wrap">
       <div class="section-head">
@@ -794,7 +745,7 @@ def build_home(pets: list[dict], stories: list[dict]) -> None:
           <h2>가족을 기다리는 아이들</h2>
           <p>사진을 누르면 아이의 짧은 이야기와 특징을 볼 수 있어요.</p>
         </div>
-        <a class="more" href="pets/index.html">전체 보기</a>
+        <a class="more" href="{depth}pets/index.html">전체 보기</a>
       </div>
       <div class="grid">{cards}</div>
     </div>
@@ -814,8 +765,20 @@ def build_home(pets: list[dict], stories: list[dict]) -> None:
       </div>
     </div>
   </section>
-  {story_section(stories, "")}
-  {area_index_section("")}
+  {story_section(stories, depth)}"""
+
+
+def build_home(pets: list[dict], stories: list[dict]) -> None:
+    page = head(
+        "러브몽 보호소",
+        "",
+        "러브몽 보호소에서 가족을 기다리는 아이들의 입양과, 전국 강아지 파양 입소 상담을 안내합니다.",
+        f"{SITE_ORIGIN}/",
+    )
+    page += nav("", "home")
+    page += f"""<main>
+  {front_body(pets, stories, "", "h1")}
+  {place_directory_section("")}
   {contact_section()}
 </main>
 """
@@ -933,8 +896,10 @@ def main() -> None:
     missing = [pet["name"] for pet in public if not pet["photos"]]
     missing_blurbs = [pet["name"] for pet in public if not pet["blurb"]]
     build_home(public, stories)
-    build_areas(public)
-    write_sitemap(public, stories)
+    from seo_pages import build_keyword_pages
+
+    extra_urls = build_keyword_pages(public, stories, front_body)
+    write_sitemap(public, stories, extra_urls)
     build_stories(stories)
     build_board(public)
     for pet in public:

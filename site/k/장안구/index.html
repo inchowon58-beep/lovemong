@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>장안구 강아지파양 · 보호소 · 입양 | 러브몽 보호소</title>
+  <meta name="description" content="장안구 강아지파양, 고양이파양, 보호소, 입양 상담 안내입니다. 전화는 전국으로 받습니다.">
+  <link rel="canonical" href="https://www.blogsite.co.kr/k/%EC%9E%A5%EC%95%88%EA%B5%AC/">
+  <link rel="icon" href="../../assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&amp;display=swap">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">
+      <img class="logo" src="../../assets/logo.jpg" alt="">
+      <span><span class="brand-name">러브몽 보호소</span><span class="brand-sub">LOVE MONG</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="site-nav">
+      <a href="../../index.html">홈</a>
+      <a href="../../pets/index.html">입양하기</a>
+      <a href="../../index.html#rehome">파양 입소</a>
+      <a href="../../index.html#story">이렇게 지내요</a>
+    </nav>
+  </div>
+</header>
+<script>
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    navToggle.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+  });
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "메뉴 열기");
+    });
+  });
+}
+</script>
+<main class="wrap board-hero">
+  <p class="eyebrow">REGION</p>
+  <h1>장안구</h1>
+  <p class="lede">장안구에서 많이 찾는 상담 단어를 모았습니다. 글을 누르면 메인 안내와 그 단어의 설명이 함께 있습니다.</p>
+  <div class="keyword-links"><a href="강아지파양/">장안구강아지파양</a><a href="강아지보호소/">장안구강아지보호소</a><a href="고양이파양/">장안구고양이파양</a><a href="고양이보호소/">장안구고양이보호소</a><a href="유기견보호소/">장안구유기견보호소</a><a href="유기견보호센터/">장안구유기견보호센터</a><a href="유기견센터/">장안구유기견센터</a><a href="유기동물보호소/">장안구유기동물보호소</a><a href="강아지입양보내기/">장안구강아지입양보내기</a><a href="강아지무료분양/">장안구강아지무료분양</a><a href="고양이무료분양/">장안구고양이무료분양</a><a href="유기묘보호소/">장안구유기묘보호소</a><a href="고양이입양보내기/">장안구고양이입양보내기</a></div>
+</main>
+<footer>
+  <div class="wrap">© 2026 러브몽보호소 · LOVEMONG SHELTER</div>
+</footer>
+<div class="callbar">
+  <a class="call-adopt" href="tel:05053007779"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.7 10.8c.9 1.7 2.2 3.2 3.9 4.3l2-2c.3-.3.8-.4 1.2-.3 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V19c0 .6-.4 1-1 1C10.6 20 4 13.4 4 5c0-.6.4-1 1-1h4.6c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .9-.3 1.2l-2 2z"/></svg><span>강아지입양<small>0505-300-7779</small></span></a>
+  <a class="call-rehome" href="tel:05057070401"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.7 10.8c.9 1.7 2.2 3.2 3.9 4.3l2-2c.3-.3.8-.4 1.2-.3 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V19c0 .6-.4 1-1 1C10.6 20 4 13.4 4 5c0-.6.4-1 1-1h4.6c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .9-.3 1.2l-2 2z"/></svg><span>강아지파양입소<small>0505-707-0401</small></span></a>
+</div>
+</body>
+</html>
