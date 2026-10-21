@@ -23,22 +23,24 @@ PHONE = "0505-707-0401"
 TEL = "05057070401"
 ADOPT_PHONE = "0505-300-7779"
 ADOPT_TEL = "05053007779"
-REGIONS = [
-    "서울",
-    "인천",
-    "경기도",
-    "강원도",
-    "충청도",
-    "대전",
-    "세종",
-    "전라도",
-    "광주",
-    "경상도",
-    "부산",
-    "대구",
-    "울산",
-    "제주도",
+AREAS = [
+    ("서울", "seoul", "아파트 이사나 층간소음, 임대 조건 때문에 더 키우기 어려워졌다는 상담이 많습니다."),
+    ("인천", "incheon", "직장과 이사가 겹치며 파양을 고민하는 경우가 있고, 섬 지역은 이동 일정을 상담 때 같이 정합니다."),
+    ("경기도", "gyeonggi", "도시와 외곽 모두 같은 전화로 상담합니다. 거리가 멀어도 번호는 다르지 않습니다."),
+    ("강원도", "gangwon", "이동 거리가 긴 편이라, 지역과 아이 상태를 먼저 듣고 방문이나 픽업이 가능한지 안내합니다."),
+    ("충청도", "chungcheong", "대전, 세종과 생활권이 이어진 상담이 많습니다. 대전·세종은 따로 안내하고, 그 밖의 충청 지역은 이 페이지에서 받습니다."),
+    ("대전", "daejeon", "세종, 충청과 가까운 곳에서 오는 상담이 많습니다. 입소 가능 여부는 자리와 아이 상태를 듣고 정합니다."),
+    ("세종", "sejong", "이사로 집을 옮기며 강아지를 데려가기 어려워졌다는 상담을 전화로 받습니다."),
+    ("전라도", "jeolla", "광주와 생활권이 겹치는 경우가 있습니다. 광주는 별도 페이지에서 안내하고, 그 밖의 전라도는 이 페이지에서 받습니다."),
+    ("광주", "gwangju", "전라도 페이지와 나누어, 광주에서 파양을 고민하는 보호자 상담을 따로 안내합니다."),
+    ("경상도", "gyeongsang", "부산, 대구, 울산은 각각 별도 페이지가 있습니다. 그 밖의 경상도 지역은 이 페이지에서 상담합니다."),
+    ("부산", "busan", "부산에서 키우던 아이의 파양 상담을 전화로 받습니다. 입소가 확정된 뒤에 사진과 입양 공고를 준비합니다."),
+    ("대구", "daegu", "대구에서 오는 파양 상담도 전국과 같은 번호로 받습니다. 아이 나이와 건강, 지금 상황을 먼저 듣습니다."),
+    ("울산", "ulsan", "울산에서 키우기 어려워진 이유를 듣고, 입소가 가능한 자리인지 전화로 확인합니다."),
+    ("제주도", "jeju", "비행이나 배편으로 이동해야 해서, 상담 때 일정과 아이 상태를 먼저 확인합니다."),
 ]
+REGIONS = [name for name, _slug, _note in AREAS]
+SITE_ORIGIN = "https://www.blogsite.co.kr"
 
 GENDER = {
     "male": ("남", "남아"),
@@ -141,14 +143,15 @@ def normalize(pet: dict, blurbs: dict[str, str]) -> dict:
     }
 
 
-def head(title: str, depth: str, description: str) -> str:
+def head(title: str, depth: str, description: str, canonical: str = "") -> str:
+    canon = f'\n  <link rel="canonical" href="{esc(canonical)}">' if canonical else ""
     return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{esc(title)}</title>
-  <meta name="description" content="{esc(description)}">
+  <meta name="description" content="{esc(description)}">{canon}
   <link rel="icon" href="{depth}assets/favicon.png" type="image/png" sizes="64x64">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&amp;display=swap">
@@ -642,6 +645,109 @@ def contact_section() -> str:
 """
 
 
+def area_index_section(depth: str) -> str:
+    links = "".join(
+        f'<a href="{depth}area/{slug}/">{esc(name)} 강아지 파양 보호소</a>'
+        for name, slug, _note in AREAS
+    )
+    return f"""<section class="section" id="areas">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>지역별 강아지 파양 보호소</h2>
+        <p>입소 상담은 전국 어디서든 전화로 받습니다. 사는 곳을 누르면 그 지역 안내를 볼 수 있어요.</p>
+      </div>
+    </div>
+    <div class="area-grid">{links}</div>
+  </div>
+</section>
+"""
+
+
+def area_article(name: str, slug: str, note: str, depth: str) -> str:
+    others = "".join(
+        f'<a href="{depth}area/{other_slug}/">{esc(other_name)} 강아지 파양 보호소</a>'
+        for other_name, other_slug, _other_note in AREAS
+        if other_slug != slug
+    )
+    return f"""<section class="section seo-article">
+  <div class="wrap seo-copy">
+    <p class="eyebrow">강아지 파양</p>
+    <h2>{esc(name)} 강아지 파양 보호소</h2>
+    <p>{esc(name)} 강아지 파양 보호소 상담은 러브몽 보호소가 전화로 받습니다. 임신과 출산, 알레르기, 이사와 유학, 군 복무, 나이 드신 보호자처럼 더 키우기 어려운 사정을 먼저 듣습니다. {esc(note)}</p>
+    <h3>{esc(name)} 강아지 파양, 상담에서 듣는 것</h3>
+    <p>전화는 {PHONE} 입니다. 아이의 나이, {esc(name)}의 어느 쪽인지, 아픈 곳과 지금 상황을 듣고 입소가 가능한지 안내합니다. 자리가 없으면 바로 받기 어렵습니다. 상담은 입소를 약속하는 절차가 아닙니다.</p>
+    <p>입소가 되면 건강과 크기에 맞춰 보호하고, 사진과 영상을 남긴 뒤 입양 공고로 새 가족을 찾습니다. 가족을 기다리는 아이는 <a href="{depth}pets/index.html">입양하기</a>에서 볼 수 있고, 입양 전화는 {ADOPT_PHONE} 입니다. 파양 절차는 <a href="{depth}index.html#rehome">강아지 파양 입소</a>에 적어 두었습니다.</p>
+    <h3>다른 지역 강아지 파양 보호소</h3>
+    <div class="area-grid">{others}</div>
+  </div>
+</section>
+"""
+
+
+def build_areas(pets: list[dict]) -> None:
+    hero = pets[:3]
+    for name, slug, note in AREAS:
+        depth = "../../"
+        hero_html = ""
+        for pet in hero:
+            photo = f"{depth}{pet['photos'][0]}" if pet["photos"] else ""
+            social = engagement(pet["id"], pet_comment_lines(pet), pet["name"])
+            hero_html += (
+                f'<a href="{depth}pets/{esc(pet["id"])}/index.html">'
+                f'<img src="{esc(photo)}" alt="{esc(pet["name"])}">'
+                f'<div class="hero-meta">'
+                f'<span class="hero-name">{esc(pet["name"])}</span>'
+                f'<div class="hero-react">{react_row(social)}</div>'
+                f'</div></a>'
+            )
+        page = head(
+            f"{name} 강아지 파양 보호소 — 러브몽 보호소",
+            depth,
+            f"{name} 강아지 파양 보호소 상담은 {PHONE} 입니다. 러브몽 보호소가 입소 가능 여부와 이후 입양을 전화로 안내합니다.",
+            f"{SITE_ORIGIN}/area/{slug}/",
+        )
+        page += nav(depth, "")
+        page += f"""<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">LOVE MONG SHELTER</p>
+        <h1>오늘도,<br>한 아이를<br>기다립니다.</h1>
+        <p class="lede">품종, 나이, 성격과 사진을 보고, 마음에 드는 아이를 가족으로 맞이해 주세요. 전화로 이야기 나눈 뒤 보호소에서 직접 만나봅니다.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="{depth}pets/index.html">입양 아이들 보기</a>
+          <a class="btn btn-ghost" href="tel:{TEL}">전화 상담</a>
+        </div>
+      </div>
+      <div class="hero-photos">{hero_html}</div>
+    </div>
+  </section>
+  {area_article(name, slug, note, depth)}
+  {contact_section()}
+</main>
+"""
+        page += footer(depth)
+        write(SITE / "area" / slug / "index.html", page)
+
+
+def write_sitemap(pets: list[dict], stories: list[dict]) -> None:
+    urls = [f"{SITE_ORIGIN}/", f"{SITE_ORIGIN}/pets/"]
+    urls.extend(f"{SITE_ORIGIN}/area/{slug}/" for _name, slug, _note in AREAS)
+    urls.extend(f"{SITE_ORIGIN}/stories/{story['id']}/" for story in stories)
+    urls.extend(f"{SITE_ORIGIN}/pets/{pet['id']}/" for pet in pets)
+    body = "".join(f"  <url><loc>{esc(url)}</loc></url>\n" for url in urls)
+    write(SITE / "sitemap.xml", f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{body}</urlset>
+""")
+    write(SITE / "robots.txt", f"""User-agent: *
+Allow: /
+
+Sitemap: {SITE_ORIGIN}/sitemap.xml
+""")
+
+
 def build_home(pets: list[dict], stories: list[dict]) -> None:
     hero = pets[:3]
     featured = pets[:6]
@@ -661,7 +767,8 @@ def build_home(pets: list[dict], stories: list[dict]) -> None:
     page = head(
         "러브몽 보호소",
         "",
-        "러브몽 보호소에서 가족을 기다리는 아이들의 입양 안내입니다.",
+        "러브몽 보호소에서 가족을 기다리는 아이들의 입양과, 전국 강아지 파양 입소 상담을 안내합니다.",
+        f"{SITE_ORIGIN}/",
     )
     page += nav("", "home")
     page += f"""<main>
@@ -708,6 +815,7 @@ def build_home(pets: list[dict], stories: list[dict]) -> None:
     </div>
   </section>
   {story_section(stories, "")}
+  {area_index_section("")}
   {contact_section()}
 </main>
 """
@@ -825,6 +933,8 @@ def main() -> None:
     missing = [pet["name"] for pet in public if not pet["photos"]]
     missing_blurbs = [pet["name"] for pet in public if not pet["blurb"]]
     build_home(public, stories)
+    build_areas(public)
+    write_sitemap(public, stories)
     build_stories(stories)
     build_board(public)
     for pet in public:

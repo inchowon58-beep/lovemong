@@ -168,6 +168,26 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.03e
 #waiting { background: #e7dfd2; }
 #adopt-steps { background: #f7f1e8; }
 #story { background: #e5efe7; }
+#areas { background: #f7f3ec; }
+.area-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.area-grid a {
+  display: block;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px 16px;
+  font-weight: 750;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+.area-grid a:hover { border-color: var(--ink); }
+.seo-article { background: #fffdf9; }
+.seo-copy { max-width: 760px; }
+.seo-copy h2 { margin: 0 0 18px; font-size: 40px; line-height: 1.35; }
+.seo-copy h3 { margin: 28px 0 10px; font-size: 28px; }
+.seo-copy p { margin: 0 0 16px; font-size: 17px; line-height: 1.85; }
+.seo-copy a { color: var(--persimmon-deep); font-weight: 700; }
+.seo-copy .area-grid { margin-top: 8px; grid-template-columns: 1fr 1fr; }
 #story, #contact, #rehome, #adopt-steps { scroll-margin-top: 88px; }
 .section-head {
   display: flex;
@@ -706,7 +726,7 @@ footer {
   .rehome-step:nth-child(even) .rehome-photo { order: 0; }
   .rehome-copy { padding: 22px; }
   .rehome-quote { min-height: 320px; padding: 52px 22px; border-radius: 24px; }
-  .grid { grid-template-columns: 1fr 1fr; }
+  .grid, .area-grid { grid-template-columns: 1fr 1fr; }
   .hero-photos a:first-child { min-height: 280px; }
   .hero-photos .hero-meta { left: 8px; right: 8px; bottom: 8px; gap: 4px; }
   .hero-photos .hero-name,
@@ -737,7 +757,8 @@ footer {
 }
 @media (max-width: 640px) {
   .wrap, .nav-inner { width: min(1120px, calc(100% - 28px)); }
-  .grid, .stats, .facts, .reason-grid, .case-box ul, .story-grid { grid-template-columns: 1fr; }
+  .grid, .stats, .facts, .reason-grid, .case-box ul, .story-grid, .area-grid { grid-template-columns: 1fr; }
+  .seo-copy h2 { font-size: 32px; }
   .contact-phones { grid-template-columns: 1fr; }
   .contact-call strong { font-size: 26px; }
   .hero { padding-top: 36px; }
