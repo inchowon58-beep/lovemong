@@ -109,10 +109,47 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.03e
   font-size: clamp(40px, 4.6vw, 64px);
   line-height: 1.22;
 }
-.seo-lead { padding: 34px 0 8px; background: #fffdf9; }
-.seo-lead h1 { margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.25; }
-.seo-lead p { margin: 14px 0 0; max-width: 720px; font-size: 18px; line-height: 1.75; }
-.blog { background: #fffdf9; }
+.seo-lead { padding: 8px 0 0; background: #f4efe6; }
+.seo-fold summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-left: auto;
+  cursor: pointer;
+  list-style: none;
+}
+.seo-fold summary::-webkit-details-marker { display: none; }
+.seo-fold summary::marker { content: ""; }
+.seo-toggle {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(36, 28, 22, 0.28);
+  border-radius: 50%;
+  position: relative;
+}
+.seo-toggle::before,
+.seo-toggle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: #8a8178;
+  transform: translate(-50%, -50%);
+}
+.seo-toggle::before { width: 8px; height: 1px; }
+.seo-toggle::after { width: 1px; height: 8px; }
+.seo-fold[open] .seo-toggle::after { display: none; }
+.seo-lead h1 { margin: 14px 0 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.3; word-break: keep-all; }
+.seo-lead p { margin: 12px 0 0; max-width: 720px; font-size: 17px; line-height: 1.75; word-break: keep-all; }
+.seo-fold summary:focus-visible {
+  outline: 2px solid var(--persimmon);
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+.blog.section { padding: 8px 0 10px; background: #e5efe7; }
+.blog .blog-card { margin-top: 12px; }
 .blog-card {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -204,7 +241,11 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.03e
 #waiting { background: #e7dfd2; }
 #adopt-steps { background: #f7f1e8; }
 #story { background: #e5efe7; }
-#areas { background: #f7f3ec; }
+#areas.section { padding: 8px 0 10px; background: #e5efe7; }
+#areas:has(details[open]) { padding: 36px 0 72px; background: #f7f3ec; }
+#areas .section-head { margin-top: 8px; }
+#region-words { background: #f7f3ec; }
+#region-words h1 { margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.25; }
 .area-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .area-grid a {
   display: block;

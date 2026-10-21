@@ -673,13 +673,18 @@ def place_directory_section(depth: str) -> str:
     links = "".join(f'<a href="{depth}k/{esc(name)}/">{esc(name)}</a>' for name in PLACES)
     return f"""<section class="section" id="areas">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <h2>지역별 안내</h2>
-        <p>사는 곳을 누르면 강아지파양, 보호소, 입양 안내로 이어집니다. 상담은 전국 전화로 받습니다.</p>
+    <details class="seo-fold">
+      <summary aria-label="지역별 안내">
+        <span class="seo-toggle"></span>
+      </summary>
+      <div class="section-head">
+        <div>
+          <h2>지역별 안내</h2>
+          <p>사는 곳을 누르면 강아지파양, 보호소, 입양 안내로 이어집니다. 상담은 전국 전화로 받습니다.</p>
+        </div>
       </div>
-    </div>
-    <div class="place-links">{links}</div>
+      <div class="place-links">{links}</div>
+    </details>
   </div>
 </section>
 """

@@ -148,16 +148,21 @@ def blog_section(region: str, phrase: str, parts: list[str], photos: list[str], 
     )
     return f"""<section class="section blog" id="guide">
   <div class="wrap">
-    <article class="blog-card">
-      <p class="eyebrow">안내</p>
-      <h2>{esc(phrase)}</h2>
-      {body}
-      <h3>자주 묻는 질문</h3>
-      <div class="faq">{questions}</div>
-      <div class="blog-photos">{images}</div>
-      <h3>{esc(region)}의 다른 안내</h3>
-      <div class="keyword-links">{others}</div>
-    </article>
+    <details class="seo-fold">
+      <summary aria-label="안내">
+        <span class="seo-toggle"></span>
+      </summary>
+      <article class="blog-card">
+        <p class="eyebrow">안내</p>
+        <h2>{esc(phrase)}</h2>
+        {body}
+        <h3>자주 묻는 질문</h3>
+        <div class="faq">{questions}</div>
+        <div class="blog-photos">{images}</div>
+        <h3>{esc(region)}의 다른 안내</h3>
+        <div class="keyword-links">{others}</div>
+      </article>
+    </details>
   </div>
 </section>
 """
@@ -166,8 +171,13 @@ def blog_section(region: str, phrase: str, parts: list[str], photos: list[str], 
 def lead_section(phrase: str, answer: str) -> str:
     return f"""<section class="seo-lead">
   <div class="wrap">
-    <h1>{esc(phrase)}</h1>
-    <p>{esc(answer)}</p>
+    <details class="seo-fold">
+      <summary aria-label="안내">
+        <span class="seo-toggle"></span>
+      </summary>
+      <h1>{esc(phrase)}</h1>
+      <p>{esc(answer)}</p>
+    </details>
   </div>
 </section>
 """
@@ -181,6 +191,7 @@ def build_keyword_pages(pets: list[dict], stories: list[dict], front_body) -> li
         shutil.rmtree(old)
     urls = [f"{SITE_ORIGIN}/k/"]
     shared = front_body(pets, stories, "../../../", "p")
+    shared_region = front_body(pets, stories, "../../", "p")
     index_links = []
     for region in PLACES:
         urls.append(page_url(region))
@@ -224,13 +235,22 @@ def build_keyword_pages(pets: list[dict], stories: list[dict], front_body) -> li
             page_url(region),
         )
         region_page += nav("../../", "")
-        region_page += f"""<main class="wrap board-hero">
-  <p class="eyebrow">REGION</p>
-  <h1>{esc(region)}</h1>
-  <p class="lede">{esc(region)}에서 많이 찾는 상담 단어를 모았습니다. 글을 누르면 메인 안내와 그 단어의 설명이 함께 있습니다.</p>
-  <div class="keyword-links">{''.join(keyword_links)}</div>
-</main>
+        region_page += "<main>\n"
+        region_page += shared_region
+        region_page += f"""<section class="section" id="region-words">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h1>{esc(region)}</h1>
+        <p>{esc(region)}에서 많이 찾는 상담 단어를 모았습니다. 글을 누르면 그 안내로 이동합니다.</p>
+      </div>
+    </div>
+    <div class="keyword-links">{''.join(keyword_links)}</div>
+  </div>
+</section>
 """
+        region_page += contact_section()
+        region_page += "\n</main>\n"
         region_page += footer("../../")
         write(SITE / "k" / region / "index.html", region_page)
         index_links.append(f'<a href="{esc(region)}/">{esc(region)}</a>')
