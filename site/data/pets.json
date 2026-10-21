@@ -1,0 +1,1959 @@
+[
+  {
+    "id": "7fe2184a-8e0f-4920-8f10-4018ccb99f4f",
+    "name": "로키",
+    "species": "먼치킨",
+    "age": "5살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-09-19T20:24:22",
+    "traits": [
+      "무섭게 생겼지만 그렇지 않아요",
+      "억울냥이랍니다",
+      "골프공가지고 잘놀아요",
+      "번팅도 잘하고 발톱도 안세우는 개냥이"
+    ],
+    "blurb": "억울한 표정으로 무섭게 보이지만 발톱도 안 세우고 번팅을 잘하는 5살 개냥이 로키입니다. 골프공을 가지고 신나게 잘 노는 건강한 로키의 반전 매력을 보러 오세요.",
+    "photos": [
+      "photos/7fe2184a-8e0f-4920-8f10-4018ccb99f4f/0.jpg",
+      "photos/7fe2184a-8e0f-4920-8f10-4018ccb99f4f/1.jpg",
+      "photos/7fe2184a-8e0f-4920-8f10-4018ccb99f4f/2.jpg"
+    ]
+  },
+  {
+    "id": "8cbb1b29-d1c3-4e4b-891a-e7f5f31df167",
+    "name": "쫑이",
+    "species": "말티즈",
+    "age": "6살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-09-16T19:34:59",
+    "traits": [
+      "메롱 혓바닥이 매력포인트",
+      "동안페이스",
+      "조용히 곁에 다가와요"
+    ],
+    "blurb": "귀여운 동안 얼굴에 살짝 내민 메롱 혓바닥이 매력적인 6살 건강한 말티즈 쫑이입니다. 조용히 곁으로 다가와 온기를 전해주는 쫑이와 따뜻한 시간을 나눠보세요.",
+    "photos": [
+      "photos/8cbb1b29-d1c3-4e4b-891a-e7f5f31df167/0.jpg",
+      "photos/8cbb1b29-d1c3-4e4b-891a-e7f5f31df167/1.jpg",
+      "photos/8cbb1b29-d1c3-4e4b-891a-e7f5f31df167/2.jpg"
+    ]
+  },
+  {
+    "id": "a4ba8c45-7f3c-40d6-aef1-5b523549b820",
+    "name": "은비",
+    "species": "믹스견",
+    "age": "5살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-09-16T19:02:11",
+    "traits": [
+      "먹을거에 욕심이 있어요",
+      "폼피츠 스러운 아이",
+      "똑순이랍니다"
+    ],
+    "blurb": "폼피츠를 쏙 빼닮은 건강한 다섯 살 은비는 눈치가 빠른 똑순이 여아예요. 먹는 것을 워낙 좋아해 맛있는 간식 하나면 금방 친해질 수 있답니다.",
+    "photos": [
+      "photos/a4ba8c45-7f3c-40d6-aef1-5b523549b820/0.jpg",
+      "photos/a4ba8c45-7f3c-40d6-aef1-5b523549b820/1.jpg",
+      "photos/a4ba8c45-7f3c-40d6-aef1-5b523549b820/2.jpg",
+      "photos/a4ba8c45-7f3c-40d6-aef1-5b523549b820/3.jpg"
+    ]
+  },
+  {
+    "id": "e51e56a0-2e38-460b-abc2-21a8f2b0a996",
+    "name": "봄이",
+    "species": "미니핀",
+    "age": "11살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-09-13T16:49:27",
+    "traits": [
+      "겁이 살짝있음",
+      "사람 손길 좋아함",
+      "통통미"
+    ],
+    "blurb": "통통한 몸매가 매력적인 건강한 11살 미니핀 봄이는 사람의 다정한 손길을 참 좋아해요. 살짝 겁이 있지만 곁을 내어주면 따뜻한 온기를 나눌 수 있답니다.",
+    "photos": [
+      "photos/e51e56a0-2e38-460b-abc2-21a8f2b0a996/0.jpg",
+      "photos/e51e56a0-2e38-460b-abc2-21a8f2b0a996/1.jpg",
+      "photos/e51e56a0-2e38-460b-abc2-21a8f2b0a996/2.jpg",
+      "photos/e51e56a0-2e38-460b-abc2-21a8f2b0a996/3.jpg"
+    ]
+  },
+  {
+    "id": "bbe0474f-551d-4eed-8df0-cb9bf37cf319",
+    "name": "마동석",
+    "species": "믹스견",
+    "age": "6살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-09-13T16:45:50",
+    "traits": [
+      "이름과 정반대 외모",
+      "이름과 정반대 성격",
+      "살짝 소심하고 겁이 많아요"
+    ],
+    "blurb": "늠름한 이름과 정반대로 순한 외모에 겁도 살짝 많은 건강한 6살 마동석이에요. 조심스럽고 소심한 성격이지만 눈을 맞추면 금세 마음이 열리는 사랑스러운 친구랍니다.",
+    "photos": [
+      "photos/bbe0474f-551d-4eed-8df0-cb9bf37cf319/0.jpg",
+      "photos/bbe0474f-551d-4eed-8df0-cb9bf37cf319/1.jpg",
+      "photos/bbe0474f-551d-4eed-8df0-cb9bf37cf319/2.jpg",
+      "photos/bbe0474f-551d-4eed-8df0-cb9bf37cf319/3.jpg"
+    ]
+  },
+  {
+    "id": "d0bb6be1-0222-428c-8d6a-266f94405ac2",
+    "name": "멜로",
+    "species": "말티치",
+    "age": "6살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-09-13T16:21:55",
+    "traits": [
+      "똥꼬발랄",
+      "사람을 너무 좋아함",
+      "애교가 많아요"
+    ],
+    "blurb": "사람을 너무 좋아하는 건강한 6살 멜로는 똥꼬발랄한 에너지를 뽐내는 말티치예요. 품에 쏙 안겨 사랑스러운 애교를 부리는 멜로의 따뜻한 가족이 되어주세요.",
+    "photos": [
+      "photos/d0bb6be1-0222-428c-8d6a-266f94405ac2/0.jpg",
+      "photos/d0bb6be1-0222-428c-8d6a-266f94405ac2/1.jpg",
+      "photos/d0bb6be1-0222-428c-8d6a-266f94405ac2/2.jpg",
+      "photos/d0bb6be1-0222-428c-8d6a-266f94405ac2/3.jpg"
+    ]
+  },
+  {
+    "id": "3a43841f-624c-4952-afcc-42eac858ab33",
+    "name": "찐이",
+    "species": "미니핀",
+    "age": "6살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-09-06T17:15:32",
+    "traits": [
+      "세상 얌전한 아이",
+      "통통한 몸매가 매력적"
+    ],
+    "blurb": "통통한 몸매가 사랑스러운 매력 포인트인 건강한 6살 미니핀 찐이랍니다. 세상 얌전한 성격으로 곁에서 묵묵히 편안함을 주는 다정한 친구예요.",
+    "photos": [
+      "photos/3a43841f-624c-4952-afcc-42eac858ab33/0.jpg",
+      "photos/3a43841f-624c-4952-afcc-42eac858ab33/1.jpg",
+      "photos/3a43841f-624c-4952-afcc-42eac858ab33/2.jpg",
+      "photos/3a43841f-624c-4952-afcc-42eac858ab33/3.jpg"
+    ]
+  },
+  {
+    "id": "89327628-17eb-4b05-8804-f6c7f9bc3e98",
+    "name": "퍼비",
+    "species": "폼피츠",
+    "age": "5살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-09-06T17:06:04",
+    "traits": [
+      "살짝 소심한 친구",
+      "포메를 더 닮은 외모",
+      "조심성이 많음"
+    ],
+    "blurb": "포메라니안을 더 닮은 외모를 가진 건강한 5살 폼피츠 퍼비예요. 조심성이 많고 살짝 소심하지만, 천천히 다가와 손을 건네줄 다정한 가족을 기다려요.",
+    "photos": [
+      "photos/89327628-17eb-4b05-8804-f6c7f9bc3e98/0.jpg",
+      "photos/89327628-17eb-4b05-8804-f6c7f9bc3e98/1.jpg",
+      "photos/89327628-17eb-4b05-8804-f6c7f9bc3e98/2.jpg",
+      "photos/89327628-17eb-4b05-8804-f6c7f9bc3e98/3.jpg"
+    ]
+  },
+  {
+    "id": "76ce8bb7-71ee-46b5-9452-deb0d8913e21",
+    "name": "태양이",
+    "species": "시츄",
+    "age": "15살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-09-06T17:01:41",
+    "traits": [
+      "한쪽눈이 안보여요",
+      "시츄답게 얌전함",
+      "순하고 착해요"
+    ],
+    "blurb": "한쪽 눈이 보이지 않지만 건강하고 씩씩한 15살 시츄 태양이예요. 시츄다운 얌전함과 착하고 순한 성품을 지녀 곁에만 있어도 큰 위로가 된답니다.",
+    "photos": [
+      "photos/76ce8bb7-71ee-46b5-9452-deb0d8913e21/0.jpg",
+      "photos/76ce8bb7-71ee-46b5-9452-deb0d8913e21/1.jpg",
+      "photos/76ce8bb7-71ee-46b5-9452-deb0d8913e21/2.jpg",
+      "photos/76ce8bb7-71ee-46b5-9452-deb0d8913e21/3.jpg"
+    ]
+  },
+  {
+    "id": "b64fb354-7c70-4ba4-bbbb-0ec9f5e09043",
+    "name": "두부",
+    "species": "말티숑",
+    "age": "6살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-09-04T19:36:24",
+    "traits": [
+      "조용하고 얌전함",
+      "사람좋아하고 애교많음"
+    ],
+    "blurb": "평소엔 조용하고 얌전하지만 사람 앞에서는 숨겨둔 애교를 가득 보여주는 건강한 여섯 살 두부예요. 사람을 무척 좋아해 곁에 머물며 은은한 사랑을 전해주는 두부의 따뜻한 눈빛을 마주해 보세요.",
+    "photos": [
+      "photos/b64fb354-7c70-4ba4-bbbb-0ec9f5e09043/0.jpg",
+      "photos/b64fb354-7c70-4ba4-bbbb-0ec9f5e09043/1.jpg",
+      "photos/b64fb354-7c70-4ba4-bbbb-0ec9f5e09043/2.jpg",
+      "photos/b64fb354-7c70-4ba4-bbbb-0ec9f5e09043/3.jpg"
+    ]
+  },
+  {
+    "id": "7d1434ea-d463-4a27-82b2-dcf6fa77b147",
+    "name": "포도",
+    "species": "푸들",
+    "age": "4살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-09-04T19:33:33",
+    "traits": [
+      "겁이 많음",
+      "순하고 착함",
+      "푸들이지만 다리짧은 귀염둥이"
+    ],
+    "blurb": "푸들이지만 다리가 짧아 귀여운 매력이 넘치는 건강한 4살 포도예요. 겁은 조금 많지만 성격이 워낙 순하고 착해서 금방 마음을 기대오는 천사랍니다.",
+    "photos": [
+      "photos/7d1434ea-d463-4a27-82b2-dcf6fa77b147/0.jpg",
+      "photos/7d1434ea-d463-4a27-82b2-dcf6fa77b147/1.jpg",
+      "photos/7d1434ea-d463-4a27-82b2-dcf6fa77b147/2.jpg",
+      "photos/7d1434ea-d463-4a27-82b2-dcf6fa77b147/3.jpg"
+    ]
+  },
+  {
+    "id": "80c4c944-aadb-446d-90d8-8592fbb22703",
+    "name": "보들이",
+    "species": "미니핀",
+    "age": "10살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-09-04T19:25:04",
+    "traits": [
+      "살짝 소심함",
+      "사람무릎을 너무 좋아함"
+    ],
+    "blurb": "살짝 소심하지만 사람 무릎 위에 쏙 안겨 온기를 나누는 걸 가장 좋아하는 건강한 열 살 미니핀 보들이에요. 조용히 곁을 내어주시면 다정한 무릎 강아지가 되어 따스한 위로를 선물해 줄 거예요.",
+    "photos": [
+      "photos/80c4c944-aadb-446d-90d8-8592fbb22703/0.jpg",
+      "photos/80c4c944-aadb-446d-90d8-8592fbb22703/1.jpg",
+      "photos/80c4c944-aadb-446d-90d8-8592fbb22703/2.jpg",
+      "photos/80c4c944-aadb-446d-90d8-8592fbb22703/3.jpg"
+    ]
+  },
+  {
+    "id": "e370ee89-6da8-462d-860c-aa2d2f838244",
+    "name": "감자",
+    "species": "믹스견",
+    "age": "11개월",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-09-04T19:22:32",
+    "traits": [
+      "꼬리콥터를 달고있어요",
+      "사람을 너무너무 좋아해요",
+      "순둥이 끝판왕"
+    ],
+    "blurb": "사람만 보면 꼬리콥터를 힘차게 돌릴 만큼 사람을 너무너무 좋아하는 열한 달 된 건강한 감자입니다. 보는 사람마저 미소 짓게 만드는 순둥이 끝판왕 감자의 사랑스러운 꼬리 인사를 직접 만나보세요.",
+    "photos": [
+      "photos/e370ee89-6da8-462d-860c-aa2d2f838244/0.jpg",
+      "photos/e370ee89-6da8-462d-860c-aa2d2f838244/1.jpg",
+      "photos/e370ee89-6da8-462d-860c-aa2d2f838244/2.jpg",
+      "photos/e370ee89-6da8-462d-860c-aa2d2f838244/3.jpg"
+    ]
+  },
+  {
+    "id": "43bf294d-1b09-46db-8d04-90b00b3103d8",
+    "name": "연유",
+    "species": "포메라니안",
+    "age": "3살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-08-27T18:32:58",
+    "traits": [
+      "살짝 까칠하지만 애교만점",
+      "자기의 예쁨을 아는 귀염둥이",
+      "초코와 라떼랑 한집에서 왔어요!"
+    ],
+    "blurb": "살짝 까칠한 듯해도 자기의 예쁨을 톡톡히 알고 애교를 듬뿍 부리는 매력 만점 세 살 연유입니다. 건강하고 사랑스러운 연유와 눈을 맞추며 도도하면서도 다정한 매력에 푹 빠져보시길 바라요.",
+    "photos": [
+      "photos/43bf294d-1b09-46db-8d04-90b00b3103d8/0.jpg",
+      "photos/43bf294d-1b09-46db-8d04-90b00b3103d8/1.jpg",
+      "photos/43bf294d-1b09-46db-8d04-90b00b3103d8/2.jpg",
+      "photos/43bf294d-1b09-46db-8d04-90b00b3103d8/3.jpg"
+    ]
+  },
+  {
+    "id": "56b28762-14a2-47a4-a6da-60b983c0acb8",
+    "name": "초코",
+    "species": "믹스견",
+    "age": "5살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "확인 중",
+    "intake": "파양",
+    "created": "2026-08-27T18:28:33",
+    "traits": [
+      "뽀뽀를 좋아하는 사랑둥이",
+      "호불호 확실한 강아지!",
+      "간식 뺏겨도 화내지 않는 순댕이",
+      "라뗴와 연유랑 한집에서 왔어요!"
+    ],
+    "blurb": "호불호는 확실하지만 간식을 뺏겨도 화 한 번 내지 않는 건강하고 착한 다섯 살 순댕이 초코예요. 뽀뽀를 유난히 좋아하는 다정한 사랑둥이 초코의 따스한 온기를 보호소에서 직접 느껴보세요.",
+    "photos": [
+      "photos/56b28762-14a2-47a4-a6da-60b983c0acb8/0.jpg",
+      "photos/56b28762-14a2-47a4-a6da-60b983c0acb8/1.jpg",
+      "photos/56b28762-14a2-47a4-a6da-60b983c0acb8/2.jpg",
+      "photos/56b28762-14a2-47a4-a6da-60b983c0acb8/3.jpg"
+    ]
+  },
+  {
+    "id": "5932f6c0-e5d7-4ffe-b782-b36f48203564",
+    "name": "라떼",
+    "species": "믹스견",
+    "age": "5살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-08-27T18:23:06",
+    "traits": [
+      "살짝 소심한 순댕이",
+      "얼굴이나 등 보다는 앞가슴쪽을 만져주면 더 좋아함",
+      "초코와 연유와 한집에서 왔어요"
+    ],
+    "blurb": "살짝 소심하지만 얼굴이나 등보다 앞가슴을 부드럽게 쓰다듬어 주면 참 좋아하는 다섯 살 라떼예요. 건강하고 순한 라떼의 앞가슴을 따뜻하게 토닥여 주며 소중한 교감을 나눠보실 분을 기다립니다.",
+    "photos": [
+      "photos/5932f6c0-e5d7-4ffe-b782-b36f48203564/0.jpg",
+      "photos/5932f6c0-e5d7-4ffe-b782-b36f48203564/1.jpg",
+      "photos/5932f6c0-e5d7-4ffe-b782-b36f48203564/2.jpg",
+      "photos/5932f6c0-e5d7-4ffe-b782-b36f48203564/3.jpg"
+    ]
+  },
+  {
+    "id": "4cc2f9a8-156c-46b5-aaa0-b5453d8119f1",
+    "name": "나무",
+    "species": "토이푸들",
+    "age": "5살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-08-26T20:45:23",
+    "traits": [
+      "최강 애교쟁이",
+      "안기는걸 무척 좋아해요",
+      "호두와 같은 집에서 왔어요"
+    ],
+    "blurb": "사람 품에 쏙 안기는 걸 무척이나 좋아하는 건강한 다섯 살 토이푸들 나무를 소개합니다. 언제나 눈을 맞추며 반겨주는 최강 애교쟁이 나무를 직접 품에 안아보고 따스함을 느껴보세요.",
+    "photos": [
+      "photos/4cc2f9a8-156c-46b5-aaa0-b5453d8119f1/0.jpg",
+      "photos/4cc2f9a8-156c-46b5-aaa0-b5453d8119f1/1.jpg",
+      "photos/4cc2f9a8-156c-46b5-aaa0-b5453d8119f1/2.jpg",
+      "photos/4cc2f9a8-156c-46b5-aaa0-b5453d8119f1/3.jpg"
+    ]
+  },
+  {
+    "id": "64f62f18-dec8-4dc4-8584-969e013784ba",
+    "name": "호두",
+    "species": "비숑프리제",
+    "age": "5살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-08-26T20:41:29",
+    "traits": [
+      "혈통서보유",
+      "무릎위를 가장 좋아하는 순댕이",
+      "깨발랄 하지만 얌전한 아이"
+    ],
+    "blurb": "깨발랄하면서도 의젓하게 얌전할 줄 알고 무릎 위를 가장 좋아하는 건강한 다섯 살 호두예요. 혈통서도 지닌 사랑스러운 순댕이 호두에게 넉넉한 무릎을 내어주실 따뜻한 인연을 기다려요.",
+    "photos": [
+      "photos/64f62f18-dec8-4dc4-8584-969e013784ba/0.jpg",
+      "photos/64f62f18-dec8-4dc4-8584-969e013784ba/1.jpg",
+      "photos/64f62f18-dec8-4dc4-8584-969e013784ba/2.jpg",
+      "photos/64f62f18-dec8-4dc4-8584-969e013784ba/3.jpg"
+    ]
+  },
+  {
+    "id": "0ff4be1d-e863-4347-8b54-153fc24d132c",
+    "name": "퐁퐁",
+    "species": "비숑프리제",
+    "age": "7살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-08-22T20:59:14",
+    "traits": [
+      "장난끼 많은 아가",
+      "짧뚱한게 매력포인트"
+    ],
+    "blurb": "7살 비숑 여아 퐁퐁이는 짧뚱한 귀여운 체형이 매력 포인트인 건강한 아이예요. 장난기 가득한 눈망울을 지닌 퐁퐁이의 밝은 에너지를 직접 만나 느껴보세요.",
+    "photos": [
+      "photos/0ff4be1d-e863-4347-8b54-153fc24d132c/0.jpg",
+      "photos/0ff4be1d-e863-4347-8b54-153fc24d132c/1.jpg",
+      "photos/0ff4be1d-e863-4347-8b54-153fc24d132c/2.jpg",
+      "photos/0ff4be1d-e863-4347-8b54-153fc24d132c/3.jpg"
+    ]
+  },
+  {
+    "id": "ae7a94bd-892f-4306-9002-880e4723cd53",
+    "name": "시루",
+    "species": "시바견",
+    "age": "2살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-08-22T12:40:14",
+    "traits": [
+      "자기물건에 애착이 강함",
+      "주인에 대한 애착도 강함",
+      "시바견 답게 쫄보 귀염둥이"
+    ],
+    "blurb": "2살 시바견 시루는 건강하고 제 물건과 주인을 유독 아끼는 귀염둥이 여아예요. 시바견 특유의 쫄보 같은 엉뚱하고 사랑스러운 매력을 만나보러 오세요.",
+    "photos": [
+      "photos/ae7a94bd-892f-4306-9002-880e4723cd53/0.jpg",
+      "photos/ae7a94bd-892f-4306-9002-880e4723cd53/1.jpg",
+      "photos/ae7a94bd-892f-4306-9002-880e4723cd53/2.jpg",
+      "photos/ae7a94bd-892f-4306-9002-880e4723cd53/3.jpg"
+    ]
+  },
+  {
+    "id": "6ff417c3-bcf6-4cfc-827a-f1d7b6cc638a",
+    "name": "보리",
+    "species": "코카푸",
+    "age": "3살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-08-14T20:51:51",
+    "traits": [
+      "밝고 쾌활함",
+      "친구들을 좋아해요",
+      "똥꼬발랄 귀염둥이"
+    ],
+    "blurb": "3살 코카푸 남아 보리는 친구들을 무척 좋아하고 똥꼬발랄한 건강한 아이예요. 밝고 쾌활한 미소로 언제나 주변을 환하게 해주는 보리를 직접 만나보세요.",
+    "photos": [
+      "photos/6ff417c3-bcf6-4cfc-827a-f1d7b6cc638a/0.jpg",
+      "photos/6ff417c3-bcf6-4cfc-827a-f1d7b6cc638a/1.jpg",
+      "photos/6ff417c3-bcf6-4cfc-827a-f1d7b6cc638a/2.jpg",
+      "photos/6ff417c3-bcf6-4cfc-827a-f1d7b6cc638a/3.jpg"
+    ]
+  },
+  {
+    "id": "40bf0744-aa16-4c9c-a9fa-521d65968c69",
+    "name": "길산",
+    "species": "시바견",
+    "age": "6살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-08-13T18:56:15",
+    "traits": [
+      "산책러버",
+      "순둥순둥 조용한 성격",
+      "짖음없음"
+    ],
+    "blurb": "6살 시바견 남아 길산이는 건강하며 짖음 없이 순둥순둥하고 조용한 성격이에요. 산책을 정말 좋아하는 듬직한 길산이와 다정한 발걸음을 함께 나눠보세요.",
+    "photos": [
+      "photos/40bf0744-aa16-4c9c-a9fa-521d65968c69/0.jpg",
+      "photos/40bf0744-aa16-4c9c-a9fa-521d65968c69/1.jpg",
+      "photos/40bf0744-aa16-4c9c-a9fa-521d65968c69/2.jpg",
+      "photos/40bf0744-aa16-4c9c-a9fa-521d65968c69/3.jpg"
+    ]
+  },
+  {
+    "id": "1d778a7b-b772-4982-a144-3dd83deb5805",
+    "name": "나롱이",
+    "species": "시츄",
+    "age": "5살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-08-13T18:42:33",
+    "traits": [
+      "네가족중 엄마",
+      "시츄답게 엄청 착하고 얌전함",
+      "애교만땅"
+    ],
+    "blurb": "네 가족의 엄마인 나롱이는 시츄답게 얌전하고 착하며 애교가 넘치는 아이입니다. 건강하고 다정한 나롱이가 건네는 따스한 교감을 직접 느껴보고 싶다면 연락 주세요.",
+    "photos": [
+      "photos/1d778a7b-b772-4982-a144-3dd83deb5805/0.jpg",
+      "photos/1d778a7b-b772-4982-a144-3dd83deb5805/1.jpg",
+      "photos/1d778a7b-b772-4982-a144-3dd83deb5805/2.jpg",
+      "photos/1d778a7b-b772-4982-a144-3dd83deb5805/3.jpg"
+    ]
+  },
+  {
+    "id": "722f62fe-d7ee-4e4e-a580-5203b17a3150",
+    "name": "초코",
+    "species": "토이푸들",
+    "age": "6살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-08-08T18:27:55",
+    "traits": [
+      "2살때 대퇴골 수술함",
+      "토이푸들보다 더 작고 소중한 아이",
+      "착해도 너무나 착해요"
+    ],
+    "blurb": "6살 토이푸들 여아 초코는 2살 때 대퇴골 수술을 받았지만 지금은 건강해요. 일반 토이푸들보다 더 작고 소중하며 너무나 착한 초코를 만나보세요.",
+    "photos": [
+      "photos/722f62fe-d7ee-4e4e-a580-5203b17a3150/0.jpg",
+      "photos/722f62fe-d7ee-4e4e-a580-5203b17a3150/1.jpg",
+      "photos/722f62fe-d7ee-4e4e-a580-5203b17a3150/2.jpg",
+      "photos/722f62fe-d7ee-4e4e-a580-5203b17a3150/3.jpg"
+    ]
+  },
+  {
+    "id": "a86f7181-2f36-4ee3-9dd5-35eda7bffe06",
+    "name": "사남매",
+    "species": "믹스견",
+    "age": "생후 2개월령",
+    "gender_short": "미상",
+    "gender": "미상",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-08-07T15:34:14",
+    "traits": [
+      "곰돌이 인형같은 외모",
+      "같은 형제 다른모색",
+      "각기 다른 매력 뿜뿜"
+    ],
+    "blurb": "생후 2개월 된 믹스견 사남매는 곰돌이 인형처럼 사랑스러운 외모의 건강한 아이들이에요. 한 형제지만 털색도 성격도 각기 다른 매력을 직접 확인해 보세요.",
+    "photos": [
+      "photos/a86f7181-2f36-4ee3-9dd5-35eda7bffe06/0.jpg",
+      "photos/a86f7181-2f36-4ee3-9dd5-35eda7bffe06/1.jpg",
+      "photos/a86f7181-2f36-4ee3-9dd5-35eda7bffe06/2.jpg",
+      "photos/a86f7181-2f36-4ee3-9dd5-35eda7bffe06/3.jpg"
+    ]
+  },
+  {
+    "id": "b7116a61-0400-40ef-a253-e17b9c6d83da",
+    "name": "미르",
+    "species": "웰시코기카디건",
+    "age": "8살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-07-30T13:44:22",
+    "traits": [
+      "귀하디 귀한 웰시코기 카디건",
+      "단미안되어있음",
+      "귀여움보단 든든함 물씬"
+    ],
+    "blurb": "단미되지 않은 긴 꼬리가 매력적인 귀한 웰시코기 카디건 미르예요. 귀여움보다는 곁을 묵묵히 지켜주는 든든함이 물씬 풍기는 건강한 친구랍니다.",
+    "photos": [
+      "photos/b7116a61-0400-40ef-a253-e17b9c6d83da/0.jpg",
+      "photos/b7116a61-0400-40ef-a253-e17b9c6d83da/1.jpg",
+      "photos/b7116a61-0400-40ef-a253-e17b9c6d83da/2.jpg",
+      "photos/b7116a61-0400-40ef-a253-e17b9c6d83da/3.jpg"
+    ]
+  },
+  {
+    "id": "9a18241a-6738-4ec1-b70a-7b65bec71030",
+    "name": "땡초",
+    "species": "웰시코기",
+    "age": "5살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-07-29T15:22:59",
+    "traits": [
+      "단미된 웰시코기",
+      "애교가 많음"
+    ],
+    "blurb": "5살 웰시코기 남아 땡초는 단미가 되어 있는 건강하고 씩씩한 아이예요. 사람을 보면 애교를 듬뿍 보여주는 사랑스러운 땡초를 직접 만나보세요.",
+    "photos": [
+      "photos/9a18241a-6738-4ec1-b70a-7b65bec71030/0.jpg",
+      "photos/9a18241a-6738-4ec1-b70a-7b65bec71030/1.jpg",
+      "photos/9a18241a-6738-4ec1-b70a-7b65bec71030/2.jpg",
+      "photos/9a18241a-6738-4ec1-b70a-7b65bec71030/3.jpg"
+    ]
+  },
+  {
+    "id": "4d42cebe-7861-4f84-923f-ef4b1b57b669",
+    "name": "장군이",
+    "species": "골든리트리버",
+    "age": "3개월",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-07-29T15:05:14",
+    "traits": [
+      "3개월 장꾸 리트리버 장군이",
+      "리트리버답게 순둥이끝판왕",
+      "아직 어려서 장난치는게 제일 좋은 아가"
+    ],
+    "blurb": "3개월 골든리트리버 남아 장군이는 건강하고 장난치는 걸 제일 좋아하는 아가예요. 장난꾸러기이면서도 리트리버답게 순둥이 끝판왕인 장군이를 만나보세요.",
+    "photos": [
+      "photos/4d42cebe-7861-4f84-923f-ef4b1b57b669/0.jpg",
+      "photos/4d42cebe-7861-4f84-923f-ef4b1b57b669/1.jpg",
+      "photos/4d42cebe-7861-4f84-923f-ef4b1b57b669/2.jpg",
+      "photos/4d42cebe-7861-4f84-923f-ef4b1b57b669/3.jpg"
+    ]
+  },
+  {
+    "id": "93251e58-98b4-4429-bef0-9f9b5b406974",
+    "name": " 빛나",
+    "species": "코리안숏헤어",
+    "age": "5살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-07-19T17:10:52",
+    "traits": [
+      "TNR(구조 중성화)로 인해 귀 컷팅",
+      "하악질한번없이 순둥한 아가"
+    ],
+    "blurb": "중성화로 귀 컷팅이 되어 있지만 하악질 한 번 없을 만큼 순둥한 빛나예요. 건강하고 다정한 성격을 지닌 빛나의 따뜻한 가족이 되어주세요.",
+    "photos": [
+      "photos/93251e58-98b4-4429-bef0-9f9b5b406974/0.jpg",
+      "photos/93251e58-98b4-4429-bef0-9f9b5b406974/1.jpg"
+    ]
+  },
+  {
+    "id": "ac62897d-a94c-4da9-93d4-06746dc64351",
+    "name": "머랭",
+    "species": "스탠다드푸들",
+    "age": "10개월",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-07-18T21:38:14",
+    "traits": [
+      "공놀이를 좋아함",
+      "크기만크지 순둥이 그자체",
+      "사람도 너무너무 좋아해요"
+    ],
+    "blurb": "머랭이는 덩치만 컸지 사람을 정말 좋아하는 순둥이 스탠다드 푸들이에요. 좋아하는 공놀이를 함께하며 교감할 평생 가족의 연락을 기다려요.",
+    "photos": [
+      "photos/ac62897d-a94c-4da9-93d4-06746dc64351/0.jpg",
+      "photos/ac62897d-a94c-4da9-93d4-06746dc64351/1.jpg",
+      "photos/ac62897d-a94c-4da9-93d4-06746dc64351/2.jpg",
+      "photos/ac62897d-a94c-4da9-93d4-06746dc64351/3.jpg"
+    ]
+  },
+  {
+    "id": "d014526c-b305-45c5-893c-063946e475a5",
+    "name": "크리미",
+    "species": "말티푸",
+    "age": "1살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-07-15T15:39:40",
+    "traits": [
+      "똥꼬발랄 귀염둥이",
+      "미니미 말티푸",
+      "사람이 제일 좋은 크리미"
+    ],
+    "blurb": "사람이 세상에서 제일 좋은 똥꼬발랄 귀염둥이 미니미 말티푸 크리미예요. 한 살다운 사랑스러운 에너지로 매일 환한 미소를 선물해 줄 아이랍니다.",
+    "photos": [
+      "photos/d014526c-b305-45c5-893c-063946e475a5/0.jpg",
+      "photos/d014526c-b305-45c5-893c-063946e475a5/1.jpg",
+      "photos/d014526c-b305-45c5-893c-063946e475a5/2.jpg",
+      "photos/d014526c-b305-45c5-893c-063946e475a5/3.jpg"
+    ]
+  },
+  {
+    "id": "611bac49-8253-4e27-a35a-962d64107a2c",
+    "name": "마루",
+    "species": "말티즈",
+    "age": "5살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-07-08T21:24:32",
+    "traits": [
+      "완전 쪼꼬미 말티즈",
+      "애교 많아요"
+    ],
+    "blurb": "품에 쏙 들어오는 완전 쪼꼬미 말티즈 마루는 애교가 정말 많은 친구예요. 사랑스러운 몸짓으로 눈 맞추며 따스한 온기를 나눠줄 가족을 찾아요.",
+    "photos": [
+      "photos/611bac49-8253-4e27-a35a-962d64107a2c/0.jpg",
+      "photos/611bac49-8253-4e27-a35a-962d64107a2c/1.jpg",
+      "photos/611bac49-8253-4e27-a35a-962d64107a2c/2.jpg",
+      "photos/611bac49-8253-4e27-a35a-962d64107a2c/3.jpg"
+    ]
+  },
+  {
+    "id": "b24c66ae-2c5b-482e-9ff2-fd6111441a15",
+    "name": "하니",
+    "species": "비숑믹스",
+    "age": "8살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-07-03T21:27:14",
+    "traits": [
+      "밝고 쾌활함",
+      "오리지널 빅숑 느낌",
+      "잔짖음 없음"
+    ],
+    "blurb": "오리지널 빅숑 느낌이 물씬 나는 하니는 밝고 쾌활한 성격을 가졌어요. 잔짖음 없이 차분하고 든든해서 일상을 함께하기에 참 좋은 친구랍니다.",
+    "photos": [
+      "photos/b24c66ae-2c5b-482e-9ff2-fd6111441a15/0.jpg",
+      "photos/b24c66ae-2c5b-482e-9ff2-fd6111441a15/1.jpg",
+      "photos/b24c66ae-2c5b-482e-9ff2-fd6111441a15/2.jpg",
+      "photos/b24c66ae-2c5b-482e-9ff2-fd6111441a15/3.jpg"
+    ]
+  },
+  {
+    "id": "fbd661c7-2e45-483d-b06e-177db70a5f54",
+    "name": "뚱이",
+    "species": "미니비숑",
+    "age": "3살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-07-01T17:42:16",
+    "traits": [
+      "슈가의 딸",
+      "자기물건에 애착이 강함",
+      "착하고 순하고 적응력 빠름"
+    ],
+    "blurb": "슈가의 딸 뚱이는 착하고 순하며 어디서든 적응을 씩씩하게 잘해요. 소중한 자기 물건을 똑 부러지게 아끼는 사랑스러운 모습을 직접 만나보세요.",
+    "photos": [
+      "photos/fbd661c7-2e45-483d-b06e-177db70a5f54/0.jpg",
+      "photos/fbd661c7-2e45-483d-b06e-177db70a5f54/1.jpg",
+      "photos/fbd661c7-2e45-483d-b06e-177db70a5f54/2.jpg",
+      "photos/fbd661c7-2e45-483d-b06e-177db70a5f54/3.jpg"
+    ]
+  },
+  {
+    "id": "3e0bcaa2-46c4-4989-8117-c32ef918de3c",
+    "name": "슈가",
+    "species": "미니비숑",
+    "age": "5살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-07-01T17:37:52",
+    "traits": [
+      "비숑다운 깨발랄함",
+      "터지는 모량 남다른 귀요움",
+      "적응빠르고 성격너무 좋아요"
+    ],
+    "blurb": "풍성하게 터지는 모량과 남다른 귀여움을 자랑하는 깨발랄 슈가예요. 적응도 빠르고 성격도 아주 좋아 곁에 두면 기분 좋은 에너지를 전해줘요.",
+    "photos": [
+      "photos/3e0bcaa2-46c4-4989-8117-c32ef918de3c/0.jpg",
+      "photos/3e0bcaa2-46c4-4989-8117-c32ef918de3c/1.jpg",
+      "photos/3e0bcaa2-46c4-4989-8117-c32ef918de3c/2.jpg",
+      "photos/3e0bcaa2-46c4-4989-8117-c32ef918de3c/3.jpg"
+    ]
+  },
+  {
+    "id": "42222806-90bd-4f24-a51d-cf429173f75a",
+    "name": "꼬로",
+    "species": "미니핀",
+    "age": "10살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-06-28T15:00:50",
+    "traits": [
+      "겁이많고 소심함",
+      "나이때문에 눈에 백탁있음",
+      "소심하지만 애교는 많음"
+    ],
+    "blurb": "열 살 꼬로는 나이로 인해 눈에 백탁이 있고 겁도 많고 소심하지만 건강하게 지내고 있어요. 조심스러운 만큼 곁을 내어주면 애교가 정말 많은 꼬로에게 따뜻한 온기를 나누어주세요.",
+    "photos": [
+      "photos/42222806-90bd-4f24-a51d-cf429173f75a/0.jpg",
+      "photos/42222806-90bd-4f24-a51d-cf429173f75a/1.jpg",
+      "photos/42222806-90bd-4f24-a51d-cf429173f75a/2.jpg",
+      "photos/42222806-90bd-4f24-a51d-cf429173f75a/3.jpg"
+    ]
+  },
+  {
+    "id": "edf2dfda-d40e-4c6f-b324-7afa62f088d5",
+    "name": "흑설탕",
+    "species": "믹스견",
+    "age": "3살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-06-27T21:15:06",
+    "traits": [
+      "성격이 소심해요",
+      "친해지면 애교최고봉"
+    ],
+    "blurb": "세 살 흑설탕이는 처음엔 조금 소심하지만 마음을 열면 애교 최고봉이 되는 사랑스러운 친구예요. 건강하고 맑은 눈망울을 가진 흑설탕이의 진짜 매력을 가까이서 따뜻하게 느껴보세요.",
+    "photos": [
+      "photos/edf2dfda-d40e-4c6f-b324-7afa62f088d5/0.jpg"
+    ]
+  },
+  {
+    "id": "07ecffd0-71e5-4ff6-92ea-4952dcadee0f",
+    "name": "카푸",
+    "species": "믹스견",
+    "age": "3개월",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-06-26T17:42:31",
+    "traits": [
+      "핵귀요미",
+      "초코코, 갈색눈이 매력뽀인트",
+      "깨발랄장난꾸러기"
+    ],
+    "blurb": "매력적인 초코코와 갈색 눈을 가진 세 달 된 건강한 카푸는 보기만 해도 사랑스러운 핵귀요미예요. 깨발랄한 장난꾸러기 카푸의 밝고 통통 튀는 사랑스러움을 직접 만나 확인해 보세요.",
+    "photos": [
+      "photos/07ecffd0-71e5-4ff6-92ea-4952dcadee0f/0.jpg",
+      "photos/07ecffd0-71e5-4ff6-92ea-4952dcadee0f/1.jpg",
+      "photos/07ecffd0-71e5-4ff6-92ea-4952dcadee0f/2.jpg",
+      "photos/07ecffd0-71e5-4ff6-92ea-4952dcadee0f/3.jpg"
+    ]
+  },
+  {
+    "id": "dcefe48f-16e0-4e2a-a7f5-d0d5bca435d5",
+    "name": "달이",
+    "species": "오시두들",
+    "age": "9개월",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "확인 중",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-06-17T19:31:43",
+    "traits": [
+      "활발하고 산책을 좋아함",
+      "노즈워크 좋아함",
+      "지역 : 파주"
+    ],
+    "blurb": "파주에 있는 아홉 달 된 달이는 노즈워크 놀이와 신나는 야외 산책을 무척 좋아하는 친구예요. 활발하고 발랄한 에너지를 가득 품은 달이와 함께 즐거운 발걸음을 맞춰보시는 건 어떨까요.",
+    "photos": [
+      "photos/dcefe48f-16e0-4e2a-a7f5-d0d5bca435d5/0.jpg"
+    ]
+  },
+  {
+    "id": "0cfbf010-6426-4d8c-98f8-77701842f73c",
+    "name": "루스",
+    "species": "먼치킨",
+    "age": "9개월",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-06-17T17:30:37",
+    "traits": [
+      "수다쟁이 냥이",
+      "먼치킨답게 애교쟁이",
+      "골골송쟁이",
+      "지역 : 충주"
+    ],
+    "blurb": "충주에서 지내는 아홉 달 된 루스는 먼치킨답게 애교가 넘쳐나는 건강한 골골송쟁이랍니다. 다정하게 말을 건네는 귀여운 수다쟁이 루스의 따스한 목소리를 직접 들으러 오세요.",
+    "photos": [
+      "photos/0cfbf010-6426-4d8c-98f8-77701842f73c/0.jpg"
+    ]
+  },
+  {
+    "id": "eba81eed-42bb-493f-8ba0-5df205cf8e52",
+    "name": "메라",
+    "species": "비숑프리제",
+    "age": "8개월",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-06-17T17:26:41",
+    "traits": [
+      "사교성 최고",
+      "사람을 너무 좋아함",
+      "다른 반려동물과도 잘지냄",
+      "지역 : 충주"
+    ],
+    "blurb": "충주에 있는 여덟 달 된 메라는 사람을 너무 좋아하고 다른 반려동물과도 아주 잘 지내요. 건강하고 사교성 최고의 성격을 가진 다정한 메라를 편안하게 만나 이야기를 나눠보세요.",
+    "photos": [
+      "photos/eba81eed-42bb-493f-8ba0-5df205cf8e52/0.jpg"
+    ]
+  },
+  {
+    "id": "a40a56f1-5156-4fe0-9221-a631a1e788da",
+    "name": "꼬미",
+    "species": "믹스견",
+    "age": "2살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-06-11T20:46:35",
+    "traits": [
+      "사둥이들의 엄마",
+      "사람을 너무 좋아함",
+      "이런 천사견이 또 있을까요"
+    ],
+    "blurb": "사둥이를 돌본 엄마 꼬미는 사람을 무척 좋아해 보기만 해도 따뜻해지는 천사견입니다. 건강하고 착한 꼬미의 다정한 눈빛을 직접 만나보고 싶으시다면 언제든 연락 주세요.",
+    "photos": [
+      "photos/a40a56f1-5156-4fe0-9221-a631a1e788da/0.jpg",
+      "photos/a40a56f1-5156-4fe0-9221-a631a1e788da/1.jpg",
+      "photos/a40a56f1-5156-4fe0-9221-a631a1e788da/2.jpg"
+    ]
+  },
+  {
+    "id": "6e0b11e7-f626-44b7-8b1a-653e0f406c0b",
+    "name": "점박이",
+    "species": "믹스견",
+    "age": "2개월령",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "확인 중",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-06-11T20:35:54",
+    "traits": [
+      "연탄가루 범벅 얼굴이 매력",
+      "반전매력 넘침"
+    ],
+    "blurb": "연탄가루를 묻힌 듯 귀여운 얼굴과 넘치는 반전 매력을 지닌 2개월령 점박이입니다. 사랑스러운 점박이의 매력에 푹 빠져보고 싶으시다면 편하게 문의해 주세요.",
+    "photos": [
+      "photos/6e0b11e7-f626-44b7-8b1a-653e0f406c0b/0.jpg",
+      "photos/6e0b11e7-f626-44b7-8b1a-653e0f406c0b/1.jpg",
+      "photos/6e0b11e7-f626-44b7-8b1a-653e0f406c0b/2.jpg",
+      "photos/6e0b11e7-f626-44b7-8b1a-653e0f406c0b/3.jpg"
+    ]
+  },
+  {
+    "id": "334b8b4c-07c8-4a2b-80ae-972a6d47245e",
+    "name": "바둑이",
+    "species": "믹스견",
+    "age": "2개월령",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-06-11T20:20:04",
+    "traits": [
+      "똑똑한 앙칼쟁이",
+      "기집애같지만 남자!"
+    ],
+    "blurb": "기집애같이 여려 보이지만 의젓한 남아이자 똘똘한 매력을 지닌 건강한 두 달 된 바둑이에요. 야무지고 똑똑한 앙칼쟁이 바둑이의 통통 튀는 사랑스러운 모습을 직접 만나 교감해 보세요.",
+    "photos": [
+      "photos/334b8b4c-07c8-4a2b-80ae-972a6d47245e/0.jpg",
+      "photos/334b8b4c-07c8-4a2b-80ae-972a6d47245e/1.jpg",
+      "photos/334b8b4c-07c8-4a2b-80ae-972a6d47245e/2.jpg",
+      "photos/334b8b4c-07c8-4a2b-80ae-972a6d47245e/3.jpg"
+    ]
+  },
+  {
+    "id": "215e0c25-d279-4280-887f-1b96024f48a1",
+    "name": "깜둥이,깜순이",
+    "species": "믹스견",
+    "age": "2개월령",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-06-11T20:16:37",
+    "traits": [
+      "깜둥 남매들",
+      "세상순둥이랍니다",
+      "꼬순내 폭발"
+    ],
+    "blurb": "포근한 꼬순내가 폭발하는 두 달 된 깜둥 남매는 세상 순둥이 면모를 뽐내는 건강한 아이예요. 바라보기만 해도 마음이 몽글몽글해지는 깜둥이, 깜순이의 순박한 눈빛을 직접 만나보세요.",
+    "photos": [
+      "photos/215e0c25-d279-4280-887f-1b96024f48a1/0.jpg",
+      "photos/215e0c25-d279-4280-887f-1b96024f48a1/1.jpg",
+      "photos/215e0c25-d279-4280-887f-1b96024f48a1/2.jpg",
+      "photos/215e0c25-d279-4280-887f-1b96024f48a1/3.jpg"
+    ]
+  },
+  {
+    "id": "a4007a0a-d9d0-4d5b-91e5-9ae0edda8f22",
+    "name": "팝콘이",
+    "species": "브리티쉬숏헤어",
+    "age": "2살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-06-07T12:58:40",
+    "traits": [
+      "복막염완치 후 후유증있음",
+      "뒷다리를 잘 못쓰지만 잘 걸어다님",
+      "정해진 위치에만 배변함"
+    ],
+    "blurb": "두 살 브리티쉬숏헤어 팝콘이는 복막염 완치 후유증으로 뒷다리가 불편해도 씩씩하게 잘 걸어요. 정해진 자리에만 배변하는 기특하고 대견한 팝콘이를 만나보세요.",
+    "photos": [
+      "photos/a4007a0a-d9d0-4d5b-91e5-9ae0edda8f22/0.jpg",
+      "photos/a4007a0a-d9d0-4d5b-91e5-9ae0edda8f22/1.jpg",
+      "photos/a4007a0a-d9d0-4d5b-91e5-9ae0edda8f22/2.jpg",
+      "photos/a4007a0a-d9d0-4d5b-91e5-9ae0edda8f22/3.jpg"
+    ]
+  },
+  {
+    "id": "57d97abe-a423-4093-9b38-c682b9ecf257",
+    "name": "마이쮸",
+    "species": "미니비숑",
+    "age": "4살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "간강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-06-06T15:53:08",
+    "traits": [
+      "사람과 멍멍이 친구들을 좋아함",
+      "너무 온순함"
+    ],
+    "blurb": "사람뿐만 아니라 강아지 친구들도 무척 좋아하며 온순한 성격을 가진 4살 마이쮸입니다. 다정하고 착한 마이쮸와 따뜻한 눈을 맞추며 만나보고 싶으시다면 편히 전화해 주세요.",
+    "photos": [
+      "photos/57d97abe-a423-4093-9b38-c682b9ecf257/0.jpg",
+      "photos/57d97abe-a423-4093-9b38-c682b9ecf257/1.jpg",
+      "photos/57d97abe-a423-4093-9b38-c682b9ecf257/2.jpg"
+    ]
+  },
+  {
+    "id": "0d3f4ffa-1c7e-4cf4-9120-1f3024f6f2e8",
+    "name": "봄이",
+    "species": "폼피츠",
+    "age": "6살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-06-05T16:14:33",
+    "traits": [
+      "한없이 순둥함",
+      "헛짖음없음",
+      "북극여우같은 외모"
+    ],
+    "blurb": "북극여우를 쏙 빼닮은 외모에 헛짖음 하나 없이 한없이 순둥한 6살 봄이입니다. 건강하고 순한 봄이의 사랑스러운 매력을 직접 느껴보고 싶으시다면 언제든 문의해 주세요.",
+    "photos": [
+      "photos/0d3f4ffa-1c7e-4cf4-9120-1f3024f6f2e8/0.jpg",
+      "photos/0d3f4ffa-1c7e-4cf4-9120-1f3024f6f2e8/1.jpg",
+      "photos/0d3f4ffa-1c7e-4cf4-9120-1f3024f6f2e8/2.jpg",
+      "photos/0d3f4ffa-1c7e-4cf4-9120-1f3024f6f2e8/3.jpg"
+    ]
+  },
+  {
+    "id": "f3330915-b387-4b05-872c-c6ac600b70bd",
+    "name": "콩이",
+    "species": "푸들",
+    "age": "11살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-06-03T13:57:35",
+    "traits": [
+      "비만",
+      "가슴쪽 상처",
+      "적응이 필요함",
+      "밥주는사람을 제일 좋아함"
+    ],
+    "blurb": "통통한 체형의 열한 살 콩이는 가슴에 상처가 있고 적응 시간이 필요하지만 밥 주는 사람을 가장 좋아합니다. 묵묵히 곁을 내어줄 준비를 하는 귀여운 콩이의 손을 따뜻하게 잡아주세요.",
+    "photos": [
+      "photos/f3330915-b387-4b05-872c-c6ac600b70bd/0.jpg",
+      "photos/f3330915-b387-4b05-872c-c6ac600b70bd/1.jpg",
+      "photos/f3330915-b387-4b05-872c-c6ac600b70bd/2.jpg",
+      "photos/f3330915-b387-4b05-872c-c6ac600b70bd/3.jpg"
+    ]
+  },
+  {
+    "id": "32cb6d65-d832-4a90-ac06-acdb9c0b6f5f",
+    "name": "해태",
+    "species": "시츄",
+    "age": "4살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-05-30T21:19:43",
+    "traits": [
+      "네 가족중 막둥이 아들",
+      "막둥이지만 든든해요",
+      "아들이라 가족을 지키려는 의지 뿜뿜"
+    ],
+    "blurb": "네 가족 중 막둥이 아들이지만 가족을 든든하게 지키려는 의지가 넘치는 해태입니다. 건강하고 씩씩한 해태를 직접 만나 따뜻한 마음을 나누고 싶으시다면 편하게 전화해 주세요.",
+    "photos": [
+      "photos/32cb6d65-d832-4a90-ac06-acdb9c0b6f5f/0.jpg",
+      "photos/32cb6d65-d832-4a90-ac06-acdb9c0b6f5f/1.jpg",
+      "photos/32cb6d65-d832-4a90-ac06-acdb9c0b6f5f/2.jpg",
+      "photos/32cb6d65-d832-4a90-ac06-acdb9c0b6f5f/3.jpg"
+    ]
+  },
+  {
+    "id": "48033fff-b553-4ac0-a20f-098ceb420aa9",
+    "name": "초롱이",
+    "species": "시츄",
+    "age": "4살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-05-30T21:17:34",
+    "traits": [
+      "네 가족중 첫째 딸",
+      "가장 듬직해요",
+      "시츄다운 느긋함"
+    ],
+    "blurb": "네 가족 중 첫째 딸인 초롱이는 시츄 특유의 느긋함과 가장 듬직한 매력을 지녔습니다. 건강하고 듬직한 초롱이와 눈을 맞추며 교감해보고 싶으시다면 언제든 연락해 주세요.",
+    "photos": [
+      "photos/48033fff-b553-4ac0-a20f-098ceb420aa9/0.jpg",
+      "photos/48033fff-b553-4ac0-a20f-098ceb420aa9/1.jpg",
+      "photos/48033fff-b553-4ac0-a20f-098ceb420aa9/2.jpg",
+      "photos/48033fff-b553-4ac0-a20f-098ceb420aa9/3.jpg"
+    ]
+  },
+  {
+    "id": "8910e19d-bb82-4420-b964-74b07db329c4",
+    "name": "호롱이",
+    "species": "시츄",
+    "age": "5살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-05-30T21:11:55",
+    "traits": [
+      "네 가족중 아빠",
+      "피부병있음",
+      "네 식구들중 가장 동안"
+    ],
+    "blurb": "네 가족 중 아빠인 호롱이는 피부병이 있지만 식구들 사이에서 가장 동안을 자랑합니다. 동안 외모를 지닌 호롱이의 다정한 모습을 직접 만나보고 싶으시다면 편하게 문의해 주세요.",
+    "photos": [
+      "photos/8910e19d-bb82-4420-b964-74b07db329c4/0.jpg",
+      "photos/8910e19d-bb82-4420-b964-74b07db329c4/1.jpg",
+      "photos/8910e19d-bb82-4420-b964-74b07db329c4/2.jpg",
+      "photos/8910e19d-bb82-4420-b964-74b07db329c4/3.jpg"
+    ]
+  },
+  {
+    "id": "dd6c11c5-1e92-44d6-8968-2395487b38cf",
+    "name": "나롱이",
+    "species": "시츄",
+    "age": "5살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-05-30T15:07:10",
+    "traits": [
+      "네 가족중 엄마",
+      "시츄답게 얌전함",
+      "통통미"
+    ],
+    "blurb": "네 가족의 의젓한 엄마 나롱이는 시츄 특유의 얌전함과 포근한 통통미가 매력적인 아이입니다. 바라보기만 해도 마음이 편안해지는 나롱이의 따뜻한 눈빛을 직접 만나 확인해 보세요.",
+    "photos": [
+      "photos/dd6c11c5-1e92-44d6-8968-2395487b38cf/0.jpg",
+      "photos/dd6c11c5-1e92-44d6-8968-2395487b38cf/1.jpg",
+      "photos/dd6c11c5-1e92-44d6-8968-2395487b38cf/2.jpg",
+      "photos/dd6c11c5-1e92-44d6-8968-2395487b38cf/3.jpg"
+    ]
+  },
+  {
+    "id": "24c741e2-1d10-4a64-b327-648a70ba3426",
+    "name": "로키",
+    "species": "요크셔테리어",
+    "age": "9살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-05-23T19:49:15",
+    "traits": [
+      "사람을 너무 좋아함",
+      "머즐털 미용됨",
+      "산책을 좋아함"
+    ],
+    "blurb": "머즐털이 깔끔하게 정돈된 아홉 살 로키는 사람 곁을 무척 좋아하고 산책을 즐기는 건강한 아이입니다. 사람을 반기며 발맞춰 걷는 로키와 함께 기분 좋은 산책길을 시작해 보시는 건 어떨까요?",
+    "photos": [
+      "photos/24c741e2-1d10-4a64-b327-648a70ba3426/0.jpg",
+      "photos/24c741e2-1d10-4a64-b327-648a70ba3426/1.jpg",
+      "photos/24c741e2-1d10-4a64-b327-648a70ba3426/2.jpg"
+    ]
+  },
+  {
+    "id": "23670470-8fe6-41d9-8537-721aa97f1d91",
+    "name": "로하",
+    "species": "푸들",
+    "age": "11살",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-05-16T18:43:00",
+    "traits": [
+      "전주인의 방치로 인해 마름",
+      "사람좋아함",
+      "실버탄모색으로 너무 귀여워요"
+    ],
+    "blurb": "매력적인 실버탄 모색이 귀여운 열한 살 로하는 마른 몸이지만 사람을 참 좋아하는 다정한 아이입니다. 따스한 눈으로 사람을 반기는 로하를 직접 만나 사랑으로 보듬어 주실 가족을 기다립니다.",
+    "photos": [
+      "photos/23670470-8fe6-41d9-8537-721aa97f1d91/0.jpg",
+      "photos/23670470-8fe6-41d9-8537-721aa97f1d91/1.jpg",
+      "photos/23670470-8fe6-41d9-8537-721aa97f1d91/2.jpg",
+      "photos/23670470-8fe6-41d9-8537-721aa97f1d91/3.jpg"
+    ]
+  },
+  {
+    "id": "d1b6b81d-9d65-42ab-a3b9-7eb822b4ebfa",
+    "name": "똘이",
+    "species": "푸들",
+    "age": "15살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-05-13T19:29:24",
+    "traits": [
+      "사람좋아함",
+      "성대수술함",
+      "노견이라 잠이많음",
+      "순함"
+    ],
+    "blurb": "성대수술을 받았지만 참 순하고 사람을 좋아하는 열다섯 살 똘이는 잠이 많은 편안한 아이입니다. 조용히 곁에 머물며 온기를 전해주는 똘이를 만나 잔잔한 일상을 함께 나눠보세요.",
+    "photos": [
+      "photos/d1b6b81d-9d65-42ab-a3b9-7eb822b4ebfa/0.jpg",
+      "photos/d1b6b81d-9d65-42ab-a3b9-7eb822b4ebfa/1.jpg",
+      "photos/d1b6b81d-9d65-42ab-a3b9-7eb822b4ebfa/2.jpg",
+      "photos/d1b6b81d-9d65-42ab-a3b9-7eb822b4ebfa/3.jpg"
+    ]
+  },
+  {
+    "id": "ce5447b6-edbb-4537-9a05-5c3740f5a868",
+    "name": "행곰이",
+    "species": "믹스견",
+    "age": "생후 2개월령",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "구조",
+    "created": "2026-05-01T20:33:54",
+    "traits": [
+      "겁이 많고 순함",
+      "유일한 트라이모색",
+      "최고 귀요미"
+    ],
+    "blurb": "유일한 트라이 모색을 지닌 생후 2개월 행곰이는 겁이 조금 있지만 무척 순하고 사랑스러운 귀요미입니다. 조심스럽게 다가와 안기는 착한 행곰이의 온기를 직접 품에 안아보시는 건 어떨까요?",
+    "photos": [
+      "photos/ce5447b6-edbb-4537-9a05-5c3740f5a868/0.jpg",
+      "photos/ce5447b6-edbb-4537-9a05-5c3740f5a868/1.jpg",
+      "photos/ce5447b6-edbb-4537-9a05-5c3740f5a868/2.jpg",
+      "photos/ce5447b6-edbb-4537-9a05-5c3740f5a868/3.jpg"
+    ]
+  },
+  {
+    "id": "c9f31551-a8fd-41b8-8acf-42a0199734a3",
+    "name": "흑곰이",
+    "species": "믹스견",
+    "age": "생후 2개월령",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "구조",
+    "created": "2026-05-01T20:30:36",
+    "traits": [
+      "활발함",
+      "호기심대마왕",
+      "사람 잘따름"
+    ],
+    "blurb": "생후 2개월 된 건강한 흑곰이는 활발하고 호기심이 가득해 사람을 꼬리 치며 잘 따르는 아이입니다. 앙증맞은 발걸음으로 세상을 탐색하는 흑곰이의 밝은 에너지를 직접 느껴보세요.",
+    "photos": [
+      "photos/c9f31551-a8fd-41b8-8acf-42a0199734a3/0.jpg",
+      "photos/c9f31551-a8fd-41b8-8acf-42a0199734a3/1.jpg",
+      "photos/c9f31551-a8fd-41b8-8acf-42a0199734a3/2.jpg",
+      "photos/c9f31551-a8fd-41b8-8acf-42a0199734a3/3.jpg"
+    ]
+  },
+  {
+    "id": "cd8f8f74-7389-4f0e-92ff-59695ab6e276",
+    "name": "반달곰",
+    "species": "믹스견",
+    "age": "생후 2개월령",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강합",
+    "neutered": "안 함",
+    "intake": "구조",
+    "created": "2026-05-01T20:19:12",
+    "traits": [
+      "가슴에 흰털이 포인트",
+      "삼형제중 제일 호기심이 많음",
+      "순하고 착해요"
+    ],
+    "blurb": "가슴의 흰 털이 매력적인 반달곰이는 삼형제 중 호기심이 가장 많으면서도 순하고 착한 아이입니다. 맑고 착한 눈망울로 사람을 바라보는 생후 2개월 반달곰이를 만나러 오세요.",
+    "photos": [
+      "photos/cd8f8f74-7389-4f0e-92ff-59695ab6e276/0.jpg",
+      "photos/cd8f8f74-7389-4f0e-92ff-59695ab6e276/1.jpg",
+      "photos/cd8f8f74-7389-4f0e-92ff-59695ab6e276/2.jpg",
+      "photos/cd8f8f74-7389-4f0e-92ff-59695ab6e276/3.jpg"
+    ]
+  },
+  {
+    "id": "9a682e8e-4a9c-491c-9812-0d119d3070ee",
+    "name": "마루",
+    "species": "믹스견",
+    "age": "생후 5개월",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-04-29T16:34:41",
+    "traits": [
+      "모든게 궁금한 천방지축",
+      "사람만 보면 발라당 애교쟁이",
+      "주걱턱이 매력 뽀인뜨"
+    ],
+    "blurb": "생후 5개월 마루는 주걱턱이 매력적인 호기심 가득한 천방지축 믹스견 공주님이에요. 사람만 보면 발라당 누워 애교를 부리는 마루를 직접 만나보시겠어요?",
+    "photos": [
+      "photos/9a682e8e-4a9c-491c-9812-0d119d3070ee/0.jpg",
+      "photos/9a682e8e-4a9c-491c-9812-0d119d3070ee/1.jpg",
+      "photos/9a682e8e-4a9c-491c-9812-0d119d3070ee/2.jpg",
+      "photos/9a682e8e-4a9c-491c-9812-0d119d3070ee/3.jpg",
+      "photos/9a682e8e-4a9c-491c-9812-0d119d3070ee/4.jpg",
+      "photos/9a682e8e-4a9c-491c-9812-0d119d3070ee/5.jpg",
+      "photos/9a682e8e-4a9c-491c-9812-0d119d3070ee/6.jpg"
+    ]
+  },
+  {
+    "id": "509fb028-097c-476e-b303-19d5f8a81523",
+    "name": "땅콩이",
+    "species": "말티즈",
+    "age": "8살",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-04-29T16:21:06",
+    "traits": [
+      "웃음이 이쁜 해피바이러스",
+      "영리하고 눈치가 빨라요",
+      "순하고 착해요"
+    ],
+    "blurb": "웃는 모습이 예쁜 해피바이러스 땅콩이는 눈치도 빠르고 영리한 말티즈 남아입니다. 순하고 착한 성품을 지닌 여덟 살 땅콩이의 따뜻한 눈맞춤을 만나보세요.",
+    "photos": [
+      "photos/509fb028-097c-476e-b303-19d5f8a81523/0.jpg",
+      "photos/509fb028-097c-476e-b303-19d5f8a81523/1.jpg",
+      "photos/509fb028-097c-476e-b303-19d5f8a81523/2.jpg",
+      "photos/509fb028-097c-476e-b303-19d5f8a81523/3.jpg",
+      "photos/509fb028-097c-476e-b303-19d5f8a81523/4.jpg",
+      "photos/509fb028-097c-476e-b303-19d5f8a81523/5.jpg",
+      "photos/509fb028-097c-476e-b303-19d5f8a81523/6.jpg"
+    ]
+  },
+  {
+    "id": "c0064a4d-2f3a-4d9c-bcf0-445b2de74717",
+    "name": "로마",
+    "species": "믹스견",
+    "age": "생후 7개월",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "파양",
+    "created": "2026-04-28T23:54:33",
+    "traits": [
+      "겁이 많고 순함",
+      "먹는 건 좋아함",
+      "조심성이 많음",
+      "하얀양말이 포인트!"
+    ],
+    "blurb": "생후 7개월 로마는 귀여운 하얀 양말이 포인트인 조심성 많고 순한 믹스견 여아입니다. 겁은 조금 있지만 맛있는 음식 앞에서는 한없이 행복해지는 아이예요.",
+    "photos": [
+      "photos/c0064a4d-2f3a-4d9c-bcf0-445b2de74717/0.jpg",
+      "photos/c0064a4d-2f3a-4d9c-bcf0-445b2de74717/1.jpg",
+      "photos/c0064a4d-2f3a-4d9c-bcf0-445b2de74717/2.jpg",
+      "photos/c0064a4d-2f3a-4d9c-bcf0-445b2de74717/3.jpg"
+    ]
+  },
+  {
+    "id": "fad08784-1744-4163-8dee-5bb15a8a1b62",
+    "name": "흑랑이",
+    "species": "시바견",
+    "age": "생후 6개월",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강",
+    "neutered": "안 함",
+    "intake": "파양",
+    "created": "2026-04-28T22:53:46",
+    "traits": [
+      "너무 착한성격",
+      "항상 웃상",
+      "에너지 넘침"
+    ],
+    "blurb": "생후 6개월 흑랑이는 언제나 웃는 얼굴로 긍정적인 에너지를 뿜어내는 시바견 남아입니다. 성격이 너무나 착하고 활력이 넘쳐 함께하기만 해도 큰 힘이 되어줘요.",
+    "photos": [
+      "photos/fad08784-1744-4163-8dee-5bb15a8a1b62/0.jpg",
+      "photos/fad08784-1744-4163-8dee-5bb15a8a1b62/1.jpg",
+      "photos/fad08784-1744-4163-8dee-5bb15a8a1b62/2.jpg",
+      "photos/fad08784-1744-4163-8dee-5bb15a8a1b62/3.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-418",
+    "name": "시루",
+    "species": "진돗개 믹스",
+    "age": "7개월",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:22:05",
+    "traits": [
+      "순하고 영리함",
+      "사람을 잘 따름",
+      "호기심 많은 어린 친구"
+    ],
+    "blurb": "사람을 잘 따르고 순하며 영리한 7개월 진돗개 믹스 남아 시루예요. 호기심 가득 반짝이는 눈으로 평생을 함께할 가족의 따뜻한 손길을 기다립니다.",
+    "photos": [
+      "photos/pet-imported-418/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-420",
+    "name": "우디",
+    "species": "셔틀랜드쉽독",
+    "age": "6개월",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "구조",
+    "created": "2026-04-25T18:21:58",
+    "traits": [
+      "밝고 활발함",
+      "애교 많음",
+      "사회성 좋음"
+    ],
+    "blurb": "6개월 우디는 밝고 활발하며 애교가 넘치는 건강한 셔틀랜드쉽독 남아입니다. 사회성도 좋아 누구에게나 먼저 다정하게 다가오니 꼭 한번 만나보세요.",
+    "photos": [
+      "photos/pet-imported-420/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-421",
+    "name": "달봉이",
+    "species": "페키니즈",
+    "age": "2년",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "허리 디스크 · 무릎 연골 변형 (보호소에서 관리 중)",
+    "neutered": "안 함",
+    "intake": "구조",
+    "created": "2026-04-25T18:19:43",
+    "traits": [
+      "순하고 사람을 잘 따름",
+      "조용한 성격",
+      "천천히 산책 좋아함"
+    ],
+    "blurb": "조용하고 순한 2살 페키니즈 달봉이는 사람을 무척 잘 따르는 친구예요. 허리와 무릎을 관리 중이지만 천천히 함께 산책하며 다정한 눈을 맞출 수 있답니다.",
+    "photos": [
+      "photos/pet-imported-421/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-422",
+    "name": "우기",
+    "species": "셔틀랜드쉽독",
+    "age": "1년 7개월",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:19:38",
+    "traits": [
+      "사람을 좋아함",
+      "산책을 즐김",
+      "온순한 성격"
+    ],
+    "blurb": "1년 7개월 된 우기는 온순한 성격에 사람을 무척 좋아하는 셔틀랜드쉽독입니다. 산책을 즐기며 곁을 지켜줄 건강한 우기의 따뜻한 가족이 되어주세요.",
+    "photos": [
+      "photos/pet-imported-422/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-423",
+    "name": "테리",
+    "species": "보스턴테리어 + 프렌치불독 믹스",
+    "age": "6년",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:19:32",
+    "traits": [
+      "차분한 시니어",
+      "사람 손길을 좋아함",
+      "조용히 곁에 있어줌"
+    ],
+    "blurb": "사람 손길을 좋아하는 6살 테리는 조용히 곁에 머물러주는 차분한 시니어예요. 다정한 눈빛으로 묵묵히 온기를 나눠줄 건강하고 사랑스러운 여아입니다.",
+    "photos": [
+      "photos/pet-imported-423/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-424",
+    "name": "찰떡이",
+    "species": "프렌치불독",
+    "age": "5개월",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "구조",
+    "created": "2026-04-25T18:19:26",
+    "traits": [
+      "애교 많은 어린 친구",
+      "활발하고 밝음",
+      "사람을 잘 따름"
+    ],
+    "blurb": "5개월 찰떡이는 사람을 잘 따르고 애교가 넘치는 활발하고 밝은 프렌치불독 남아예요. 건강하고 해맑은 미소로 반겨줄 어린 찰떡이를 직접 만나보세요.",
+    "photos": [
+      "photos/pet-imported-424/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-425",
+    "name": "미미",
+    "species": "꼬똥드툴레아",
+    "age": "6개월",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "안 함",
+    "intake": "구조",
+    "created": "2026-04-25T18:19:21",
+    "traits": [
+      "순하고 사랑스러움",
+      "사람과 친근함",
+      "호기심 많음"
+    ],
+    "blurb": "6개월 미미는 호기심 많고 사람과 친근하게 지내는 순하고 사랑스러운 꼬똥드툴레아예요. 건강하고 밝은 모습으로 반겨주는 미미의 가족을 기다립니다.",
+    "photos": [
+      "photos/pet-imported-425/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-426",
+    "name": "천둥이",
+    "species": "시베리안허스키",
+    "age": "7년",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:19:15",
+    "traits": [
+      "듬직한 시니어",
+      "산책 베테랑",
+      "조용하고 점잖음"
+    ],
+    "blurb": "7살 천둥이는 조용하고 점잖은 매력을 지닌 건강하고 듬직한 시니어 허스키예요. 함께 발맞춰 걷는 산책 베테랑 천둥이의 온기를 직접 느껴보세요.",
+    "photos": [
+      "photos/pet-imported-426/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-427",
+    "name": "설탕",
+    "species": "비숑프리제",
+    "age": "9개월",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:19:09",
+    "traits": [
+      "포근한 모습",
+      "사람 좋아함",
+      "장난기 가득"
+    ],
+    "blurb": "포근한 외모에 사람을 정말 좋아하는 9개월 비숑프리제 설탕이예요. 장난기 가득한 밝은 모습으로 곁에서 기분 좋은 활력을 전해줄 거예요.",
+    "photos": [
+      "photos/pet-imported-427/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-430",
+    "name": "꽁냥이",
+    "species": "푸숑 (푸들 + 비숑프리제)",
+    "age": "2년",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:19:03",
+    "traits": [
+      "곱슬머리 매력",
+      "사람과 잘 어울림",
+      "활기찬 성격"
+    ],
+    "blurb": "사랑스러운 곱슬머리가 매력적인 두 살 푸숑 꽁냥이입니다. 사람과 잘 어울리는 활기찬 성격이라 매일 환한 미소를 선물해 줄 친구예요.",
+    "photos": [
+      "photos/pet-imported-430/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-431",
+    "name": "루이",
+    "species": "말티즈",
+    "age": "7년",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "오른쪽 뒷다리 무릎 양성 종양 (양호한 상태)",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:18:57",
+    "traits": [
+      "다정한 시니어",
+      "조용하고 점잖음",
+      "사람 곁을 좋아함"
+    ],
+    "blurb": "조용하고 점잖게 사람 곁을 지켜주는 다정한 일곱 살 루이예요. 오른쪽 뒷다리 무릎에 양성 종양이 있지만 양호한 상태로 편안히 지내고 있답니다.",
+    "photos": [
+      "photos/pet-imported-431/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-432",
+    "name": "사장님",
+    "species": "말티즈",
+    "age": "6년",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "식이성 알레르기 (식단 관리 중)",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:18:51",
+    "traits": [
+      "듬직하고 점잖음",
+      "애교 많음",
+      "사람을 잘 따름"
+    ],
+    "blurb": "듬직하고 점잖으면서도 사람을 잘 따르며 애교 부리는 말티즈 사장님이에요. 식이성 알레르기로 식단 관리 중이지만 늘 다정하게 곁을 내어줍니다.",
+    "photos": [
+      "photos/pet-imported-432/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-434",
+    "name": "망고",
+    "species": "스코티쉬폴드",
+    "age": "2년",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:18:44",
+    "traits": [
+      "온순한 성격",
+      "조용히 곁에 있음",
+      "사람 손길을 좋아함"
+    ],
+    "blurb": "온순한 성격으로 사람의 따스한 손길을 좋아하는 두 살 망고예요. 늘 곁에 조용히 머물며 하루의 피로를 사르르 녹여줄 다정한 아이랍니다.",
+    "photos": [
+      "photos/pet-imported-434/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-435",
+    "name": "레이",
+    "species": "러시안블루 믹스",
+    "age": "3년",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:18:39",
+    "traits": [
+      "차분하고 단정함",
+      "혼자만의 시간을 좋아함",
+      "익숙해지면 다정함"
+    ],
+    "blurb": "차분하고 단정한 분위기 속에 혼자만의 시간을 편안히 즐기는 세 살 레이예요. 시간이 흘러 마음을 열고 익숙해지면 한없이 다정한 모습을 보여준답니다.",
+    "photos": [
+      "photos/pet-imported-435/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-436",
+    "name": "뽀뽀",
+    "species": "푸들",
+    "age": "3년",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:18:33",
+    "traits": [
+      "친해지면 껌딱지",
+      "사람을 잘 따름",
+      "조심스러운 첫인상"
+    ],
+    "blurb": "첫인상은 조금 조심스럽지만 사람을 참 잘 따르는 세 살 푸들 뽀뽀예요. 마음을 트고 친해지면 곁에서 떨어지지 않는 사랑스러운 껌딱지가 되어준답니다.",
+    "photos": [
+      "photos/pet-imported-436/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-506",
+    "name": "한별",
+    "species": "실버푸들",
+    "age": "2년",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:18:27",
+    "traits": [
+      "겁이 많고 소심함",
+      "익숙해지면 다정함",
+      "조용한 성격"
+    ],
+    "blurb": "겁이 많고 소심하지만 조용하게 눈을 맞추는 두 살 실버푸들 한별이에요. 천천히 시간을 두고 익숙해지면 깊고 다정한 마음을 아낌없이 보여줄 친구랍니다.",
+    "photos": [
+      "photos/pet-imported-506/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-507",
+    "name": "뚜리",
+    "species": "화이트푸들",
+    "age": "7년",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:18:21",
+    "traits": [
+      "소심하지만 다정함",
+      "조용한 성격",
+      "사람 곁을 좋아함"
+    ],
+    "blurb": "조용하고 소심하지만 사람 곁에 머무는 걸 참 좋아하는 다정한 7살 화이트푸들 뚜리입니다. 건강하게 지내며 따뜻한 온기로 곁을 지켜줄 뚜리를 직접 만나보세요.",
+    "photos": [
+      "photos/pet-imported-507/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-508",
+    "name": "쭈미",
+    "species": "화이트푸들",
+    "age": "7년",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함 (관심받기 위한 헛짖음 있음)",
+    "neutered": "안 함",
+    "intake": "구조",
+    "created": "2026-04-25T18:18:17",
+    "traits": [
+      "관심을 좋아함",
+      "애교 있음",
+      "에너지 충만"
+    ],
+    "blurb": "넘치는 에너지와 애교로 관심받는 것을 무척 좋아하는 7살 건강한 화이트푸들 쭈미입니다. 눈길을 끌려고 헛짖는 모습마저 사랑스러운 쭈미의 매력에 푹 빠져보세요.",
+    "photos": [
+      "photos/pet-imported-508/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-509",
+    "name": "양이",
+    "species": "보스턴테리어 믹스",
+    "age": "1년",
+    "gender_short": "남",
+    "gender": "남아",
+    "health": "부정교합 (생활에 지장 없음)",
+    "neutered": "안 함",
+    "intake": "구조",
+    "created": "2026-04-25T18:18:11",
+    "traits": [
+      "순하고 겁이 많음",
+      "실제로 보면 묘한 매력",
+      "조용히 곁에 있음"
+    ],
+    "blurb": "겁이 많지만 순해서 조용히 곁에 머물러 주는 1살 보스턴테리어 믹스 양이입니다. 생활에 지장 없는 부정교합조차 실제로 보면 묘한 매력으로 다가옵니다.",
+    "photos": [
+      "photos/pet-imported-509/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-510",
+    "name": "구름이",
+    "species": "아메리칸숏헤어",
+    "age": "5년",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "비만 관리 중 (식단 조절)",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:18:05",
+    "traits": [
+      "순하고 착함",
+      "허공 꾹꾹이 매니아",
+      "사람 손길을 좋아함"
+    ],
+    "blurb": "사람 손길을 좋아하고 허공 꾹꾹이를 즐기는 순하고 착한 5살 아메리칸숏헤어 구름이입니다. 현재 건강을 위해 식단을 조절하며 관리 중이니 다정하게 안아주세요.",
+    "photos": [
+      "photos/pet-imported-510/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-511",
+    "name": "밤",
+    "species": "코리안숏헤어",
+    "age": "5년",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:17:58",
+    "traits": [
+      "적당히 얌전함",
+      "친해지면 애교 부림",
+      "조용한 성격"
+    ],
+    "blurb": "조용하고 적당히 얌전해 마음을 편안하게 해주는 5살 건강한 코리안숏헤어 밤이입니다. 조금만 친해지면 사랑스러운 애교를 살포시 보여주니 꼭 한번 찾아와주세요.",
+    "photos": [
+      "photos/pet-imported-511/0.jpg"
+    ]
+  },
+  {
+    "id": "pet-imported-548",
+    "name": "줄리엣",
+    "species": "시츄",
+    "age": "5년",
+    "gender_short": "여",
+    "gender": "여아",
+    "health": "건강함 (식탐이 조금 있음)",
+    "neutered": "완료",
+    "intake": "구조",
+    "created": "2026-04-25T18:17:52",
+    "traits": [
+      "얌전한 성격",
+      "애칭은 \"쮸\"",
+      "사람 곁을 좋아함"
+    ],
+    "blurb": "'쮸'라는 귀여운 애칭을 가진 줄리엣은 사람 곁을 좋아하는 5살 얌전한 시츄입니다. 식탐이 조금 있지만 건강한 아이로, 따뜻한 눈빛을 나누러 와주세요.",
+    "photos": [
+      "photos/pet-imported-548/0.jpg"
+    ]
+  }
+]

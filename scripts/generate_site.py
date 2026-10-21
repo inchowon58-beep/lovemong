@@ -1,0 +1,846 @@
+"""Build the Love Mong shelter site from the exported pet catalog."""
+import hashlib
+import html
+import json
+import pathlib
+import random
+from datetime import datetime, timedelta, timezone
+
+from comment_bank import AUTHORS
+from story_comments import STORY_COMMENTS, STORY_NAMES
+
+KST = timezone(timedelta(hours=9))
+
+ROOT = pathlib.Path(r"f:\보호소신규러브몽")
+SITE = ROOT / "site"
+PETS_PATH = ROOT / "data" / "pets.json"
+BLURBS_PATH = ROOT / "data" / "blurbs.json"
+REHOME_PATH = ROOT / "data" / "rehome.json"
+STORIES_PATH = ROOT / "data" / "stories.json"
+REHOME_IMAGE_DIR = SITE / "assets" / "rehome"
+
+PHONE = "0505-707-0401"
+TEL = "05057070401"
+ADOPT_PHONE = "0505-300-7779"
+ADOPT_TEL = "05053007779"
+REGIONS = [
+    "서울",
+    "인천",
+    "경기도",
+    "강원도",
+    "충청도",
+    "대전",
+    "세종",
+    "전라도",
+    "광주",
+    "경상도",
+    "부산",
+    "대구",
+    "울산",
+    "제주도",
+]
+
+GENDER = {
+    "male": ("남", "남아"),
+    "female": ("여", "여아"),
+    "unknown": ("미상", "미상"),
+}
+NEUTER = {"yes": "완료", "no": "안 함", "unknown": "확인 중"}
+STATUS = {
+    "waiting": ("입양 대기", "pill-waiting", "0"),
+    "adopted": ("입양 완료", "pill-adopted", "1"),
+}
+
+
+def esc(value) -> str:
+    return html.escape("" if value is None else str(value), quote=True)
+
+
+MARK = {
+    "c": "mark-color",
+    "b": "mark-big",
+    "u": "mark-line",
+}
+
+
+def rich_inline(text: str) -> str:
+    parts = []
+    cursor = 0
+    while True:
+        start = text.find("{", cursor)
+        if start < 0:
+            parts.append(esc(text[cursor:]))
+            break
+        end_tag = text.find("}", start)
+        if end_tag < 0 or end_tag - start != 2:
+            parts.append(esc(text[cursor : start + 1]))
+            cursor = start + 1
+            continue
+        kind = text[start + 1 : end_tag]
+        close = "{" + "/" + kind + "}"
+        finish = text.find(close, end_tag)
+        if kind not in MARK or finish < 0:
+            parts.append(esc(text[cursor : start + 1]))
+            cursor = start + 1
+            continue
+        parts.append(esc(text[cursor:start]))
+        inner = text[end_tag + 1 : finish]
+        parts.append(f'<span class="{MARK[kind]}">{esc(inner)}</span>')
+        cursor = finish + len(close)
+    return "".join(parts)
+
+
+def rich_block(text: str) -> str:
+    lines = []
+    for line in text.split("\n"):
+        if not line.strip():
+            lines.append('<span class="gap"></span>')
+        else:
+            lines.append(f"<span>{rich_inline(line)}</span>")
+    return "".join(lines)
+
+
+def photo_list(pet: dict) -> list[str]:
+    urls = []
+    seen = set()
+    main = pet.get("photoUrl")
+    if main:
+        urls.append(main)
+        seen.add(main)
+    for photo in pet.get("photos") or []:
+        url = photo.get("url")
+        if url and url not in seen:
+            urls.append(url)
+            seen.add(url)
+    local = []
+    for index, _url in enumerate(urls):
+        rel = f"photos/{pet['_id']}/{index}.jpg"
+        if (SITE / rel).exists() and (SITE / rel).stat().st_size > 0:
+            local.append(rel)
+    return local
+
+
+def normalize(pet: dict, blurbs: dict[str, str]) -> dict:
+    gender_short, gender_long = GENDER.get(pet.get("gender"), ("미상", "미상"))
+    created_at = datetime.fromisoformat(pet["_createdAt"].replace("Z", "+00:00")).astimezone(KST)
+    traits = [t for t in (pet.get("traits") or []) if t]
+    return {
+        "id": pet["_id"],
+        "name": pet.get("name") or "이름 미정",
+        "species": pet.get("species") or "믹스",
+        "age": pet.get("age") or "확인 중",
+        "gender_short": gender_short,
+        "gender": gender_long,
+        "health": pet.get("healthStatus") or "확인 중",
+        "neutered": NEUTER.get(pet.get("neutered"), "확인 중"),
+        "intake": pet.get("intakeRoute") or "확인 중",
+        "created": created_at.strftime("%Y-%m-%dT%H:%M:%S"),
+        "traits": traits,
+        "blurb": blurbs.get(pet["_id"], ""),
+        "photos": photo_list(pet),
+    }
+
+
+def head(title: str, depth: str, description: str) -> str:
+    return f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{esc(title)}</title>
+  <meta name="description" content="{esc(description)}">
+  <link rel="icon" href="{depth}assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&amp;display=swap">
+  <link rel="stylesheet" href="{depth}assets/css/site.css">
+</head>
+<body>
+"""
+
+
+HEART = """<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 20.5s-6.6-4.1-6.6-8.6A3.7 3.7 0 0 1 12 9a3.7 3.7 0 0 1 6.6 2.9c0 4.5-6.6 8.6-6.6 8.6z"/></svg>"""
+BUBBLE = """<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 4.5h14a2 2 0 0 1 2 2v7.5a2 2 0 0 1-2 2H9.2L5 19.8V4.5z"/></svg>"""
+_SOCIAL = {}
+
+
+def _unique(lines: list[str]) -> list[str]:
+    seen = set()
+    unique = []
+    for line in lines:
+        text = " ".join((line or "").split())
+        if text and text not in seen:
+            seen.add(text)
+            unique.append(text)
+    return unique
+
+
+def _iro(word: str) -> str:
+    last = word[-1] if word else ""
+    code = ord(last) if last else 0
+    if 0xAC00 <= code <= 0xD7A3 and (code - 0xAC00) % 28:
+        return "이라고"
+    return "라고"
+
+
+def _healthy(health: str) -> bool:
+    compact = health.replace(" ", "")
+    return compact in {"건강함", "건강합", "간강함", "건강합니다"}
+
+
+def pet_comment_lines(pet: dict) -> list[str]:
+    name = pet["name"]
+    species = pet["species"]
+    age = pet["age"]
+    gender = pet["gender"]
+    health = (pet.get("health") or "").strip()
+    traits = [trait.strip() for trait in pet.get("traits") or [] if trait and trait.strip()]
+    blurb = (pet.get("blurb") or "").strip()
+    known_age = age and "확인" not in age
+    lines = [
+        f"{species} {name}, 사진이 소개글이랑 같아요.",
+        f"글에 적힌 {species} 얼굴이 사진에 그대로 있어요.",
+        f"{name} 사진만 봐도 {species} 소개가 과장이 아니에요.",
+        f"좋은 가족이 {name}의 {species}다운 점을 그대로 아껴 주면 좋겠어요.",
+    ]
+    if known_age:
+        lines.append(f"{age} {name}{_iro(name)} 하니, 사진 속 표정이 그 나이로 보여요.")
+    if gender in {"남아", "여아"}:
+        lines.append(f"{name}, {gender}라는 소개가 사진이랑 어울려요.")
+        if known_age:
+            lines.append(f"나이 {age}, {gender}, 품종 {species}. 이 세 가지가 사진이랑 같이 보여요.")
+    for trait in traits:
+        lines.append(f"특징에 「{trait}」{_iro(trait)} 있는데, 사진을 보니 고개가 끄덕여져요.")
+        lines.append(f"{name}, 다시 보게 된 이유는 「{trait}」이었어요.")
+        lines.append(f"「{trait}」. 이 한 줄이 사진이랑 제일 잘 맞아요.")
+    if traits:
+        lines.append(f"{species} {name}의 「{traits[0]}」, 사진에서 먼저 느껴졌어요.")
+        if len(traits) > 1:
+            joined = "」, 「".join(traits)
+            lines.append(f"적힌 특징이 「{joined}」인데, 사진이랑 안 어긋나지 않아요.")
+    if health and "확인" not in health:
+        if _healthy(health):
+            lines.append(f"건강하다는 안내를 읽고 나니 {name} 사진이 더 반가워요.")
+            lines.append(f"{name}, 건강함이라고 적힌 기본 정보가 사진이랑 잘 맞아요.")
+        else:
+            lines.append(f"건강 상태에 「{health}」라고 적혀 있어서, 사진을 더 찬찬히 봤어요.")
+            lines.append(f"만나기 전에 알고 싶었던 {name} 소식이 「{health}」였어요.")
+    if pet.get("neutered") == "완료":
+        lines.append(f"{name}, 중성화까지 되어 있다는 안내가 마음에 놓여요.")
+    elif pet.get("neutered") == "안 함":
+        lines.append("중성화는 아직 안 했다는 기본 정보도 같이 읽어 봤어요.")
+    if pet.get("intake") == "구조":
+        lines.append(f"구조로 들어온 {name}. 사진이 더 소중해 보여요.")
+    elif pet.get("intake") == "파양":
+        lines.append(f"파양으로 입소한 {name}. 다음 가족이 이 성격을 알아봐 주면 좋겠어요.")
+    elif pet.get("intake") and "확인" not in pet["intake"]:
+        lines.append(f"입소 경로는 {pet['intake']}라고 안내되어 있네요.")
+    for sentence in blurb.replace("!", ".").replace("?", ".").split("."):
+        sentence = sentence.strip()
+        if 12 <= len(sentence) <= 90:
+            lines.append(f"소개글 그대로예요. {sentence}.")
+    return lines
+
+
+def story_comment_lines(story: dict) -> list[str]:
+    written = STORY_COMMENTS.get(str(story["id"])) or []
+    if written:
+        return written
+    lines = [f"「{story['title']}」, 사진이 이 제목이랑 같아요."]
+    for block in story.get("blocks") or []:
+        if block.get("type") != "text":
+            continue
+        for line in block.get("lines") or []:
+            text = line.strip()
+            if len(text) >= 8 and not text.startswith("0505"):
+                lines.append(f"글에 적힌 대로예요. {text}")
+    return lines
+
+
+WISHES = [
+    "좋은 가족 만나길.",
+    "빨리 좋은 가족 만나면 좋겠어요.",
+    "좋은 가족만 만나자.",
+    "건강히 잘 자라라.",
+    "아프지 말고 잘 자라라.",
+    "아프지 말고, 밥 잘 먹고, 잘 자라.",
+    "따뜻한 집에서 오래오래 사랑받길.",
+    "기다리는 시간이 짧았으면 좋겠어요.",
+    "꼭 좋은 데로 가세요.",
+    "사랑받을 일만 남았으면 해요.",
+    "건강한 모습 그대로 가족 만나길.",
+    "지금처럼 건강하고, 그다음은 좋은 가족이 이어 주길.",
+    "외롭지 않게, 좋은 손에서 자라길.",
+    "좋은 가족, 맛있는 밥, 포근한 잠자리 만나길.",
+    "댓글로나마 쓰다듬고 갑니다. 잘 자라.",
+    "어디 아프지 말고 편히 지내.",
+    "좋은 인연이 빨리 나타났으면.",
+    "사진 보는 동안에도 좋은 가족이 생기길 빌었어요.",
+    "남은 날들 건강하게, 그리고 행복하게.",
+    "가족 되는 날이 하루라도 빨리 오면 좋겠어요.",
+]
+
+
+def wish_lines(name: str) -> list[str]:
+    lines = list(WISHES)
+    if name:
+        lines.extend(
+            [
+                f"{name}, 좋은 가족 만나.",
+                f"{name}, 빨리 좋은 가족 만나면 좋겠어요.",
+                f"{name}, 건강히 잘 자라라.",
+                f"{name}, 아프지 말고 잘 자라.",
+                f"{name}, 따뜻한 집에서 오래 사랑받길.",
+                f"{name}, 좋은 사람만 만나자.",
+                f"{name}도 아프지 말고 무럭무럭.",
+                f"{name}, 기다리는 동안도 건강히.",
+            ]
+        )
+    return lines
+
+
+def _weave(content: list[str], wishes: list[str]) -> list[str]:
+    if not wishes:
+        return content
+    if not content:
+        return wishes
+    merged = []
+    step = max(1, len(content) // len(wishes))
+    cursor = 0
+    for wish in wishes:
+        merged.extend(content[cursor : cursor + step])
+        cursor += step
+        merged.append(wish)
+    merged.extend(content[cursor:])
+    return merged
+
+
+def engagement(key: str, lines: list[str], name: str = "") -> dict:
+    cached = _SOCIAL.get(key)
+    if cached:
+        return cached
+    seed = int(hashlib.sha256(key.encode("utf-8")).hexdigest()[:12], 16)
+    rng = random.Random(seed)
+    content = _unique(lines)
+    wishes = _unique(wish_lines(name))
+    count = rng.randint(15, 30)
+    wish_count = min(len(wishes), max(5, round(count * 0.35)))
+    content_count = min(len(content), max(0, count - wish_count))
+    while content_count + wish_count < 15 and wish_count < len(wishes):
+        wish_count += 1
+    picked_content = rng.sample(content, content_count) if content_count else []
+    picked_wishes = rng.sample(wishes, wish_count) if wish_count else []
+    picked = _weave(picked_content, picked_wishes)
+    authors = AUTHORS[:]
+    rng.shuffle(authors)
+    comments = [{"name": authors[index], "text": text} for index, text in enumerate(picked)]
+    data = {"likes": rng.randint(80, 140), "comments": comments}
+    _SOCIAL[key] = data
+    return data
+
+
+def react_row(data: dict) -> str:
+    return (
+        f'<div class="react"><span>{HEART}{data["likes"]}</span>'
+        f'<span>{BUBBLE}{len(data["comments"])}</span></div>'
+    )
+
+
+def comment_section(data: dict) -> str:
+    items = "".join(
+        f'<li><strong>{esc(item["name"])}</strong><p>{esc(item["text"])}</p></li>'
+        for item in data["comments"]
+    )
+    return f"""<section class="comment-box">
+  <h2>댓글 {len(data["comments"])}</h2>
+  <div class="react react-detail"><span>{HEART}좋아요 {data["likes"]}</span><span>{BUBBLE}댓글 {len(data["comments"])}</span></div>
+  <ul>{items}</ul>
+</section>
+"""
+
+
+def nav(depth: str, current: str) -> str:
+    def item(href: str, label: str, key: str) -> str:
+        current_attr = ' aria-current="page"' if key and current == key else ""
+        return f'<a href="{depth}{href}"{current_attr}>{label}</a>'
+
+    return f"""<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="{depth}index.html">
+      <img class="logo" src="{depth}assets/logo.jpg" alt="">
+      <span><span class="brand-name">러브몽 보호소</span><span class="brand-sub">LOVE MONG</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="site-nav">
+      {item("index.html", "홈", "home")}
+      {item("pets/index.html", "입양하기", "pets")}
+      {item("index.html#rehome", "파양 입소", "")}
+      {item("index.html#story", "이렇게 지내요", "story")}
+    </nav>
+  </div>
+</header>
+<script>
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+if (navToggle && navLinks) {{
+  navToggle.addEventListener("click", () => {{
+    const open = navLinks.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    navToggle.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+  }});
+  navLinks.querySelectorAll("a").forEach((link) => {{
+    link.addEventListener("click", () => {{
+      navLinks.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "메뉴 열기");
+    }});
+  }});
+}}
+</script>
+"""
+
+
+PHONE_ICON = """<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.7 10.8c.9 1.7 2.2 3.2 3.9 4.3l2-2c.3-.3.8-.4 1.2-.3 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V19c0 .6-.4 1-1 1C10.6 20 4 13.4 4 5c0-.6.4-1 1-1h4.6c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .9-.3 1.2l-2 2z"/></svg>"""
+
+
+def callbar() -> str:
+    return f"""<div class="callbar">
+  <a class="call-adopt" href="tel:05053007779">{PHONE_ICON}<span>강아지입양<small>0505-300-7779</small></span></a>
+  <a class="call-rehome" href="tel:05057070401">{PHONE_ICON}<span>강아지파양입소<small>0505-707-0401</small></span></a>
+</div>
+"""
+
+
+def footer(depth: str) -> str:
+    return f"""<footer>
+  <div class="wrap">© 2026 러브몽보호소 · LOVEMONG SHELTER</div>
+</footer>
+{callbar()}</body>
+</html>
+"""
+
+
+def card(pet: dict, depth: str) -> str:
+    photo = pet["photos"][0] if pet["photos"] else ""
+    img = (
+        f'<img src="{depth}{esc(photo)}" alt="{esc(pet["name"])}" loading="lazy">'
+        if photo
+        else ""
+    )
+    traits = "".join(f'<span class="trait">{esc(trait)}</span>' for trait in pet["traits"][:3])
+    search = " ".join(
+        [pet["name"], pet["species"], pet["age"], pet["gender"], *pet["traits"]]
+    ).lower()
+    social = engagement(pet["id"], pet_comment_lines(pet), pet["name"])
+    return f"""<article class="card" data-pet data-name="{esc(pet["name"])}" data-search="{esc(search)}">
+  <a href="{depth}pets/{esc(pet["id"])}/index.html">
+    <div class="card-photo">{img}</div>
+    <div class="card-body">
+      <h3>{esc(pet["name"])}</h3>
+      <div class="meta">{esc(pet["species"])} · {esc(pet["age"])} · {esc(pet["gender_short"])}</div>
+      <div class="traits">{traits}</div>
+      {react_row(social)}
+    </div>
+  </a>
+</article>
+"""
+
+
+def write(path: pathlib.Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+
+
+def rehome_section() -> str:
+    if not REHOME_PATH.exists():
+        return ""
+    data = json.loads(REHOME_PATH.read_text(encoding="utf-8"))
+    reason_cards = []
+    for reason in data.get("reasons") or []:
+        if isinstance(reason, str):
+            reason_cards.append(f'<span class="reason">{esc(reason)}</span>')
+            continue
+        image = ""
+        stem = reason.get("image") or ""
+        for ext in (".jpg", ".jpeg", ".png", ".webp"):
+            candidate = REHOME_IMAGE_DIR / f"{stem}{ext}"
+            if stem and candidate.exists():
+                image = f"assets/rehome/{stem}{ext}"
+                break
+        photo = f'<img src="{esc(image)}" alt="">' if image else ""
+        reason_cards.append(
+            f"""<article class="reason-card">
+  {photo}
+  <div>
+    <h3>{esc(reason.get("title") or "")}</h3>
+    <p class="soft">{rich_block(reason.get("body") or "")}</p>
+  </div>
+</article>"""
+        )
+    cases = "".join(f"<li>{rich_block(item)}</li>" for item in data.get("cases") or [])
+    quote_lines = []
+    for line in data.get("quote_lines") or []:
+        quote_lines.append(f'<span class="q-{esc(line.get("size") or "md")}">{esc(line.get("text") or "")}</span>')
+    steps = []
+    for index, step in enumerate(data.get("steps") or [], start=1):
+        image = ""
+        stem = f"{index:02d}"
+        for ext in (".jpg", ".jpeg", ".png", ".webp"):
+            candidate = REHOME_IMAGE_DIR / f"{stem}{ext}"
+            if candidate.exists():
+                image = f"assets/rehome/{stem}{ext}"
+                break
+        img = f'<img src="{esc(image)}" alt="{esc(step.get("title") or "")}">' if image else ""
+        steps.append(
+            f"""<article class="rehome-step">
+  <div class="rehome-photo">{img}</div>
+  <div class="rehome-copy">
+    <em>{index:02d}</em>
+    <h3>{esc(step.get("title") or "")}</h3>
+    <p class="soft">{rich_block(step.get("body") or "")}</p>
+  </div>
+</article>"""
+        )
+    return f"""<section class="section" id="rehome">
+  <div class="wrap">
+    <div class="rehome-intro">
+      <p class="eyebrow">REHOMING</p>
+      <h2>{esc(data.get("title") or "강아지 파양 입소")}</h2>
+    </div>
+    <blockquote class="rehome-quote">{"".join(quote_lines)}</blockquote>
+    <div class="reason-grid">
+      {"".join(reason_cards)}
+    </div>
+    <div class="case-box">
+      <h3>이럴 때 입소를 알아봅니다</h3>
+      <ul>{cases}</ul>
+    </div>
+    <div class="section-head rehome-process-head">
+      <div>
+        <h2>입소 절차</h2>
+        <p>상담부터 입양 공고까지, 순서는 같습니다.</p>
+      </div>
+    </div>
+    <div class="rehome-steps">
+      {"".join(steps)}
+    </div>
+  </div>
+</section>
+"""
+
+
+def load_stories() -> list[dict]:
+    if not STORIES_PATH.exists():
+        return []
+    stories = json.loads(STORIES_PATH.read_text(encoding="utf-8"))
+    return [story for story in stories if story.get("title") and story.get("cover")]
+
+
+def story_card(story: dict, depth: str) -> str:
+    social = engagement("story-" + story["id"], story_comment_lines(story), STORY_NAMES.get(str(story["id"]), ""))
+    return f"""<a class="story-card" href="{depth}stories/{esc(story["id"])}/index.html">
+  <div class="story-photo"><img src="{depth}{esc(story["cover"])}" alt="" loading="lazy"></div>
+  <div class="story-body">
+    <h3>{esc(story["title"])}</h3>
+    {react_row(social)}
+  </div>
+</a>
+"""
+
+
+def story_section(stories: list[dict], depth: str) -> str:
+    if not stories:
+        return ""
+    cards = "".join(story_card(story, depth) for story in stories)
+    return f"""<section class="section" id="story">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>아이들은 이렇게 지내요</h2>
+        <p>산책하고, 밥 먹고, 미용하는 보호소의 하루입니다. 사진을 누르면 그 이야기를 볼 수 있어요.</p>
+      </div>
+    </div>
+    <div class="story-grid">{cards}</div>
+  </div>
+</section>
+"""
+
+
+def story_body(story: dict, depth: str) -> str:
+    parts = []
+    for block in story.get("blocks") or []:
+        if block.get("type") == "text":
+            lines = "".join(f"<span>{esc(line)}</span>" for line in block.get("lines") or [])
+            if lines:
+                parts.append(f'<div class="story-text">{lines}</div>')
+        elif block.get("type") == "images":
+            files = block.get("files") or []
+            imgs = "".join(
+                f'<img src="{depth}{esc(path)}" alt="{esc(story["title"])}" loading="lazy">'
+                for path in files
+            )
+            single = " single" if len(files) == 1 else ""
+            if imgs:
+                parts.append(f'<div class="story-photos{single}">{imgs}</div>')
+        elif block.get("type") == "video" and block.get("file"):
+            poster = block.get("poster") or ""
+            poster_attr = f' poster="{depth}{esc(poster)}"' if poster else ""
+            caption = f'<p class="story-caption">{esc(block.get("caption") or "")}</p>' if block.get("caption") else ""
+            parts.append(
+                f'<figure class="story-video">{caption}<video controls playsinline preload="metadata"{poster_attr}>'
+                f'<source src="{depth}{esc(block["file"])}" type="video/mp4"></video></figure>'
+            )
+    return "".join(parts)
+
+
+def build_stories(stories: list[dict]) -> None:
+    for story in stories:
+        page = head(
+            f"{story['title']} — 러브몽 보호소",
+            "../../",
+            story["title"],
+        )
+        page += nav("../../", "story")
+        social = engagement("story-" + story["id"], story_comment_lines(story), STORY_NAMES.get(str(story["id"]), ""))
+        page += f"""<main class="wrap story-page">
+  <a class="crumb" href="../../index.html#story">← 아이들은 이렇게 지내요</a>
+  <h1>{esc(story["title"])}</h1>
+  {story_body(story, "../../")}
+  {comment_section(social)}
+</main>
+"""
+        page += footer("../../")
+        write(SITE / "stories" / story["id"] / "index.html", page)
+
+
+ADOPT_MARK = """<span class="call-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 20.6s-6.8-4.2-6.8-8.8A3.8 3.8 0 0 1 12 8.6a3.8 3.8 0 0 1 6.8 3.2c0 4.6-6.8 8.8-6.8 8.8z"/></svg></span>"""
+INTAKE_MARK = """<span class="call-ico" aria-hidden="true"><span class="ring"></span><span class="ring delay"></span><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.7 10.8c.9 1.7 2.2 3.2 3.9 4.3l2-2c.3-.3.8-.4 1.2-.3 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V19c0 .6-.4 1-1 1C10.6 20 4 13.4 4 5c0-.6.4-1 1-1h4.6c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .9-.3 1.2l-2 2z"/></svg></span>"""
+
+
+def contact_section() -> str:
+    regions = "".join(f"<li>{esc(name)}</li>" for name in REGIONS)
+    return f"""<section id="contact">
+  <div class="wrap">
+    <div class="contact-band">
+      <div class="contact-copy">
+        <p class="eyebrow">CONTACT</p>
+        <h2>전국 통합문의</h2>
+        <p>입양과 입소, 전국 어디서든 전화로 상담합니다.</p>
+      </div>
+      <div class="contact-phones">
+        <a class="contact-call adopt" href="tel:{ADOPT_TEL}">{ADOPT_MARK}<span class="call-copy"><small>입양 상담</small><strong>{ADOPT_PHONE}</strong></span></a>
+        <a class="contact-call rehome" href="tel:{TEL}">{INTAKE_MARK}<span class="call-copy"><small>입소 상담</small><strong>{PHONE}</strong></span></a>
+      </div>
+      <div class="region-block">
+        <p>전국 입소문의</p>
+        <ul class="regions">{regions}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+
+
+def build_home(pets: list[dict], stories: list[dict]) -> None:
+    hero = pets[:3]
+    featured = pets[:6]
+    hero_html = ""
+    for pet in hero:
+        photo = f"{esc(pet['photos'][0])}" if pet["photos"] else ""
+        social = engagement(pet["id"], pet_comment_lines(pet), pet["name"])
+        hero_html += (
+            f'<a href="pets/{esc(pet["id"])}/index.html">'
+            f'<img src="{photo}" alt="{esc(pet["name"])}">'
+            f'<div class="hero-meta">'
+            f'<span class="hero-name">{esc(pet["name"])}</span>'
+            f'<div class="hero-react">{react_row(social)}</div>'
+            f'</div></a>'
+        )
+    cards = "\n".join(card(pet, "") for pet in featured)
+    page = head(
+        "러브몽 보호소",
+        "",
+        "러브몽 보호소에서 가족을 기다리는 아이들의 입양 안내입니다.",
+    )
+    page += nav("", "home")
+    page += f"""<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">LOVE MONG SHELTER</p>
+        <h1>오늘도,<br>한 아이를<br>기다립니다.</h1>
+        <p class="lede">품종, 나이, 성격과 사진을 보고, 마음에 드는 아이를 가족으로 맞이해 주세요. 전화로 이야기 나눈 뒤 보호소에서 직접 만나봅니다.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="pets/index.html">입양 아이들 보기</a>
+          <a class="btn btn-ghost" href="tel:{TEL}">전화 상담</a>
+        </div>
+      </div>
+      <div class="hero-photos">{hero_html}</div>
+    </div>
+  </section>
+  {rehome_section()}
+  <section class="section" id="waiting">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>가족을 기다리는 아이들</h2>
+          <p>사진을 누르면 아이의 짧은 이야기와 특징을 볼 수 있어요.</p>
+        </div>
+        <a class="more" href="pets/index.html">전체 보기</a>
+      </div>
+      <div class="grid">{cards}</div>
+    </div>
+  </section>
+  <section class="section" id="adopt-steps">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>입양은 이렇게 진행돼요</h2>
+          <p>서로의 생활이 맞는지 천천히 확인합니다.</p>
+        </div>
+      </div>
+      <div class="steps">
+        <article class="step"><em>01</em><h3>이야기 나누기</h3><p>전화로 아이의 성격, 건강, 현재 생활을 먼저 들려드려요.</p></article>
+        <article class="step"><em>02</em><h3>직접 만나기</h3><p>보호소 방문은 예약제로 진행합니다. 아이와 시간을 보내며 서로를 살펴요.</p></article>
+        <article class="step"><em>03</em><h3>가족이 되기</h3><p>임시 보호 기간을 거쳐 입양을 확정합니다. 이후에도 적응을 함께 살펴요.</p></article>
+      </div>
+    </div>
+  </section>
+  {story_section(stories, "")}
+  {contact_section()}
+</main>
+"""
+    page += footer("")
+    write(SITE / "index.html", page)
+
+
+def build_board(pets: list[dict]) -> None:
+    cards = "\n".join(card(pet, "../") for pet in pets)
+    page = head(
+        "입양하기 — 러브몽 보호소",
+        "../",
+        "러브몽 보호소에서 가족을 기다리는 아이들입니다.",
+    )
+    page += nav("../", "pets")
+    page += f"""<main class="wrap board-hero">
+  <p class="eyebrow">ADOPTION</p>
+  <h1>입양하기</h1>
+  <p class="lede">마음에 드는 아이를 누르면 사진과 짧은 이야기를 볼 수 있어요.</p>
+  <div class="grid" id="grid">{cards}</div>
+</main>
+"""
+    page += footer("../")
+    write(SITE / "pets" / "index.html", page)
+
+
+def fact(label: str, value: str) -> str:
+    return f'<div class="fact"><span>{esc(label)}</span><strong>{esc(value)}</strong></div>'
+
+
+def build_detail(pet: dict, others: list[dict]) -> None:
+    photos = pet["photos"]
+    main = f"../../{photos[0]}" if photos else ""
+    main_img = f'<img id="hero-photo" src="{esc(main)}" alt="{esc(pet["name"])}">' if main else ""
+    thumbs = ""
+    for index, photo in enumerate(photos):
+        current = ' aria-current="true"' if index == 0 else ""
+        src = f"../../{photo}"
+        thumbs += (
+            f'<button type="button" data-src="{esc(src)}" data-alt="{esc(pet["name"])} 사진 {index + 1}"{current}>'
+            f'<img src="{esc(src)}" alt=""></button>'
+        )
+    traits = "".join(f'<span class="trait">{esc(trait)}</span>' for trait in pet["traits"])
+    related = "\n".join(card(other, "../../") for other in others)
+    gallery_script = """
+<script>
+const hero = document.querySelector("#hero-photo");
+document.querySelectorAll(".thumbs button").forEach((button) => {
+  button.addEventListener("click", () => {
+    if (!hero) return;
+    hero.src = button.dataset.src;
+    hero.alt = button.dataset.alt;
+    document.querySelectorAll(".thumbs button").forEach((item) => item.removeAttribute("aria-current"));
+    button.setAttribute("aria-current", "true");
+  });
+});
+</script>
+"""
+    page = head(
+        f"{pet['name']} — 러브몽 보호소",
+        "../../",
+        f"{pet['name']}, {pet['species']}, {pet['age']}, {pet['gender']}. {', '.join(pet['traits'])}",
+    )
+    page += nav("../../", "")
+    page += f"""<main class="wrap detail">
+  <a class="crumb" href="../index.html">← 입양 목록</a>
+  <div class="detail-grid">
+    <div>
+      <div class="frame">{main_img}</div>
+      <div class="thumbs">{thumbs}</div>
+    </div>
+    <div class="detail-copy">
+      <h1>{esc(pet["name"])}</h1>
+      <p class="lede">{esc(pet["species"])} · {esc(pet["age"])} · {esc(pet["gender"])}</p>
+      <p class="blurb">{esc(pet["blurb"])}</p>
+      <div class="traits">{traits}</div>
+      <div class="facts">
+        {fact("품종", pet["species"])}
+        {fact("나이", pet["age"])}
+        {fact("성별", pet["gender"])}
+        {fact("건강 상태", pet["health"])}
+        {fact("중성화", pet["neutered"])}
+        {fact("입소 경로", pet["intake"])}
+      </div>
+      <div class="detail-actions">
+        <a class="btn btn-primary" href="tel:{ADOPT_TEL}">입양 문의 {ADOPT_PHONE}</a>
+        <a class="btn btn-ghost" href="../index.html">다른 아이 보기</a>
+      </div>
+    </div>
+  </div>
+  {comment_section(engagement(pet["id"], pet_comment_lines(pet), pet["name"]))}
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>다른 아이들도 만나보세요</h2>
+      </div>
+      <a class="more" href="../index.html">전체 보기</a>
+    </div>
+    <div class="grid">{related}</div>
+  </section>
+</main>
+{gallery_script}
+"""
+    page += footer("../../")
+    write(SITE / "pets" / pet["id"] / "index.html", page)
+
+
+def main() -> None:
+    raw = json.loads(PETS_PATH.read_text(encoding="utf-8"))
+    blurbs = json.loads(BLURBS_PATH.read_text(encoding="utf-8")) if BLURBS_PATH.exists() else {}
+    public = [normalize(pet, blurbs) for pet in raw if pet.get("status") in STATUS]
+    public.sort(key=lambda pet: pet["name"])
+    public.sort(key=lambda pet: pet["created"], reverse=True)
+    stories = load_stories()
+    missing = [pet["name"] for pet in public if not pet["photos"]]
+    missing_blurbs = [pet["name"] for pet in public if not pet["blurb"]]
+    build_home(public, stories)
+    build_stories(stories)
+    build_board(public)
+    for pet in public:
+        others = [other for other in public if other["id"] != pet["id"]][:3]
+        build_detail(pet, others)
+    catalog = SITE / "data"
+    catalog.mkdir(parents=True, exist_ok=True)
+    (catalog / "pets.json").write_text(
+        json.dumps(public, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"pages {len(public)} missing-photos {len(missing)} missing-blurbs {len(missing_blurbs)}")
+    if missing:
+        print("missing photos", ", ".join(missing))
+    if missing_blurbs:
+        print("missing blurbs", ", ".join(missing_blurbs))
+
+
+if __name__ == "__main__":
+    main()
