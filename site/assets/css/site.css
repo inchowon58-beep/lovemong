@@ -762,6 +762,16 @@ footer {
   font-size: 14px;
   text-align: center;
 }
+.footer-copy { margin: 0; }
+.footer-biz {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 14px 0 0;
+  font-style: normal;
+  line-height: 1.55;
+}
+.footer-biz strong { color: rgba(255, 248, 239, 0.88); font-weight: 750; }
 .callbar {
   position: fixed;
   right: 18px;

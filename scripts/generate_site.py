@@ -439,7 +439,15 @@ def callbar() -> str:
 
 def footer(depth: str) -> str:
     return f"""<footer>
-  <div class="wrap">© 2026 러브몽보호소 · LOVEMONG SHELTER</div>
+  <div class="wrap">
+    <p class="footer-copy">© 2026 러브몽보호소 · LOVEMONG SHELTER</p>
+    <address class="footer-biz">
+      <strong>주식회사 오케이독</strong>
+      <span>대표 · 조춘원</span>
+      <span>사업자등록번호 · 411-88-00358</span>
+      <span>경기도 부천시 부일로 199번길 21, 2층</span>
+    </address>
+  </div>
 </footer>
 {callbar()}</body>
 </html>
